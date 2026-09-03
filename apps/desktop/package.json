@@ -1,10 +1,10 @@
 {
   "name": "@nextclaw/desktop",
-  "version": "0.0.281",
+  "version": "0.0.282",
   "private": true,
-  "description": "NextClaw desktop shell powered by Electron.",
-  "author": "NextClaw Team",
-  "homepage": "https://github.com/Peiiii/nextclaw",
+  "description": "元流桌面端，由 Electron 驱动。",
+  "author": "元流团队",
+  "homepage": "https://github.com/shangtiepeng/nextclaw",
   "main": "dist/src/main.js",
   "license": "MIT",
   "scripts": {
@@ -57,7 +57,7 @@
   },
   "build": {
     "appId": "io.nextclaw.desktop",
-    "productName": "NextClaw Desktop",
+    "productName": "元流",
     "directories": {
       "output": "release",
       "buildResources": "build"
@@ -115,7 +115,7 @@
     },
     "win": {
       "icon": "build/icons/icon.ico",
-      "artifactName": "NextClaw.Desktop-Setup-${version}-${arch}.${ext}",
+      "artifactName": "元流-安装程序-${version}-${arch}.${ext}",
       "target": [
         {
           "target": "nsis",
@@ -136,15 +136,15 @@
       "allowToChangeInstallationDirectory": true,
       "createDesktopShortcut": true,
       "createStartMenuShortcut": true,
-      "shortcutName": "NextClaw Desktop",
-      "uninstallDisplayName": "NextClaw Desktop",
+      "shortcutName": "元流",
+      "uninstallDisplayName": "元流",
       "deleteAppDataOnUninstall": false,
       "installerIcon": "build/icons/icon.ico",
       "uninstallerIcon": "build/icons/icon.ico",
       "installerHeaderIcon": "build/icons/icon.ico"
     },
     "linux": {
-      "artifactName": "nextclaw-desktop-${version}-${arch}.${ext}",
+      "artifactName": "yuanliu-desktop-${version}-${arch}.${ext}",
       "target": [
         {
           "target": "AppImage",
@@ -166,17 +166,17 @@
       ]
     },
     "deb": {
-      "packageName": "nextclaw-desktop",
-      "maintainer": "NextClaw Team",
+      "packageName": "yuanliu-desktop",
+      "maintainer": "元流团队",
       "priority": "optional",
       "packageCategory": "utility",
-      "synopsis": "NextClaw Desktop",
-      "description": "NextClaw desktop shell powered by Electron."
+      "synopsis": "元流",
+      "description": "元流桌面端，由 Electron 驱动。"
     },
     "publish": [
       {
         "provider": "github",
-        "owner": "Peiiii",
+        "owner": "shangtiepeng",
         "repo": "nextclaw"
       }
     ]

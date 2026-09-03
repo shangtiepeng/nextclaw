@@ -103,13 +103,13 @@ describe("DesktopAppShell", () => {
     expect(resizeStrip.className).toContain("top-0");
     expect(resizeStrip.className).toContain("h-1");
     expect(controls.className).toContain("desktop-window-no-drag");
-    expect(screen.getByLabelText("Minimize").className).toContain(
+    expect(screen.getByLabelText("最小化").className).toContain(
       "desktop-window-no-drag",
     );
-    expect(screen.getByLabelText("Maximize").className).toContain(
+    expect(screen.getByLabelText("最大化").className).toContain(
       "desktop-window-no-drag",
     );
-    expect(screen.getByLabelText("Close").className).toContain(
+    expect(screen.getByLabelText("关闭").className).toContain(
       "desktop-window-no-drag",
     );
     expect(screen.getByTestId("app-content")).toBeTruthy();
@@ -127,22 +127,22 @@ describe("DesktopAppShell", () => {
     expect(chromeRoot?.style.getPropertyValue("--desktop-sidebar-width")).toBe(
       "56px",
     );
-    expect(screen.getByAltText("NextClaw")).toBeTruthy();
+    expect(screen.getByAltText("元流")).toBeTruthy();
   });
 
   it("switches the Windows maximize button to restore while maximized", async () => {
     renderDesktopShell("win32");
 
-    expect(await screen.findByLabelText("Maximize")).toBeTruthy();
+    expect(await screen.findByLabelText("最大化")).toBeTruthy();
 
     act(() => {
       windowStateListener?.({ isMaximized: true });
     });
 
-    expect(screen.getByLabelText("Restore").className).toContain(
+    expect(screen.getByLabelText("还原").className).toContain(
       "desktop-window-no-drag",
     );
-    expect(screen.queryByLabelText("Maximize")).toBeNull();
+    expect(screen.queryByLabelText("最大化")).toBeNull();
   });
 
   it("keeps non-Windows desktop hosts on the existing shell shape", () => {

@@ -57,7 +57,7 @@ describe("PanelAppStandalonePage", () => {
     const surface = screen.getByTestId("panel-app-runtime-surface");
     expect(surface.getAttribute("data-app-id")).toBe("publisher.todo");
     expect(surface.getAttribute("data-restoration-scope")).toBe("standalone");
-    expect(document.title).toBe("Rust Todo · NextClaw");
+    expect(document.title).toBe("Rust Todo · 元流");
     expect(container.querySelector("main")?.children).toHaveLength(1);
   });
 });

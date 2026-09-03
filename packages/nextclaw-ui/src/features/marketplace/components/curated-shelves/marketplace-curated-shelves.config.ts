@@ -92,10 +92,10 @@ export const MARKETPLACE_SHELF_SCENE_VISUALS: MarketplaceShelfSceneVisual[] = [
   },
   {
     scene: "nextclaw-official",
-    title: { zh: "NextClaw 官方", en: "NextClaw Official" },
+    title: { zh: "元流官方", en: "元流 Official" },
     summary: {
-      zh: "优先查看由 NextClaw 维护的原生能力。",
-      en: "Browse native capabilities maintained by NextClaw.",
+      zh: "优先查看由元流维护的原生能力。",
+      en: "Browse native capabilities maintained by 元流.",
     },
     icon: Sparkles,
     tone: "teal",

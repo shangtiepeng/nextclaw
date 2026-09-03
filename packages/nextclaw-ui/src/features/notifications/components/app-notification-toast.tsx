@@ -29,7 +29,7 @@ function AppNotificationContent({
         <img
           aria-hidden="true"
           alt=""
-          src={iconSrc ?? "/logo.svg"}
+          src={iconSrc ?? "/yuanliu-icon.png"}
           className="h-full w-full object-contain"
         />
       </span>

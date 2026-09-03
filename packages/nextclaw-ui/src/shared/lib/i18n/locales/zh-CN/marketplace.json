@@ -97,7 +97,7 @@
   "mcpConnectionTimeout": "超时（毫秒）",
   "mcpConnectionVerifyTls": "验证 TLS 证书",
   "mcpConnectionLocalWarning": "此 MCP 会在本机执行命令。只连接你信任的服务。",
-  "mcpConnectionRemoteWarning": "NextClaw 会连接这个远程服务。请确认地址和权限可信。",
+  "mcpConnectionRemoteWarning": "元流 会连接这个远程服务。请确认地址和权限可信。",
   "mcpConnectionTest": "测试连接",
   "mcpConnectionTesting": "正在测试",
   "mcpConnectionSave": "保存连接",

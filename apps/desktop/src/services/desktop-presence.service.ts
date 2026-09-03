@@ -107,7 +107,7 @@ export class DesktopPresenceService {
 
     const trayIcon = this.resolveTrayImage();
     this.tray = new Tray(trayIcon);
-    this.tray.setToolTip("NextClaw");
+    this.tray.setToolTip("元流");
     this.tray.on("click", this.showMainWindow);
     this.refreshTrayMenu();
     this.cleanups.push(() => {
@@ -204,16 +204,16 @@ export class DesktopPresenceService {
     const snapshot = this.getSnapshot();
     const template: MenuItemConstructorOptions[] = [
       {
-        label: "Open NextClaw",
+        label: "打开元流",
         click: this.showMainWindow
       },
       {
-        label: snapshot.closeToBackground ? "Close Window Hides to Background" : "Close Window Quits App",
+        label: snapshot.closeToBackground ? "关闭窗口后在后台运行" : "关闭窗口后退出应用",
         enabled: false
       },
       { type: "separator" },
       {
-        label: "Launch at Login",
+        label: "登录时启动",
         type: "checkbox",
         checked: snapshot.launchAtLogin,
         enabled: snapshot.supportsLaunchAtLogin,
@@ -231,7 +231,7 @@ export class DesktopPresenceService {
         : []),
       { type: "separator" },
       {
-        label: "Quit NextClaw",
+        label: "退出元流",
         click: () => {
           this.requestExplicitQuit();
         }

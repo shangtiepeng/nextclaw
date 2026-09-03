@@ -41,7 +41,7 @@ const DEFAULT_LAUNCHER_STATE: DesktopLauncherState = {
     closeToBackground: true,
     launchAtLogin: false
   },
-  languagePreference: null
+  languagePreference: "zh"
 };
 
 export type DesktopReleaseChannel = "stable" | "beta";
@@ -92,7 +92,7 @@ function normalizeState(parsed: unknown): DesktopLauncherState {
     downloadedVersion: normalizeOptionalString(record.downloadedVersion),
     downloadedReleaseNotesUrl: normalizeOptionalString(record.downloadedReleaseNotesUrl),
     presencePreferences: normalizePresencePreferences(record.presencePreferences),
-    languagePreference: normalizeDesktopUiLanguagePreference(record.languagePreference)
+    languagePreference: normalizeDesktopUiLanguagePreference(record.languagePreference) ?? "zh"
   };
 }
 

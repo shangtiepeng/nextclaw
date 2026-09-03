@@ -26,11 +26,11 @@ function createIcoFromPng(pngBuffer) {
 }
 
 const appRoot = resolve(import.meta.dirname, "..");
-const sourceSvg = resolve(appRoot, "..", "landing", "public", "logo.svg");
+const sourcePng = resolve(appRoot, "build", "icons", "yuanliu-source.png");
 const iconsOutputDir = resolve(appRoot, "build", "icons");
 
-if (!existsSync(sourceSvg)) {
-  throw new Error(`Source logo not found: ${sourceSvg}`);
+if (!existsSync(sourcePng)) {
+  throw new Error(`Source icon not found: ${sourcePng}`);
 }
 
 const tempDir = mkdtempSync(join(tmpdir(), "nextclaw-desktop-icon-"));
@@ -54,7 +54,7 @@ try {
   ];
 
   for (const [name, size] of iconSizes) {
-    run("sips", ["-z", String(size), String(size), "-s", "format", "png", sourceSvg, "--out", join(iconsetDir, name)]);
+    run("sips", ["-z", String(size), String(size), "-s", "format", "png", sourcePng, "--out", join(iconsetDir, name)]);
   }
 
   const icnsPath = join(iconsOutputDir, "icon.icns");

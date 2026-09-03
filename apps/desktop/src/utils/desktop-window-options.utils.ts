@@ -13,7 +13,7 @@ export function createDesktopWindowOptions(preloadPath: string): BrowserWindowCo
     minWidth: desktopWindowMinWidth,
     minHeight: desktopWindowMinHeight,
     ...createPlatformWindowChromeOptions(),
-    title: "NextClaw Desktop",
+    title: "元流",
     webPreferences: {
       preload: preloadPath,
       nodeIntegration: false,

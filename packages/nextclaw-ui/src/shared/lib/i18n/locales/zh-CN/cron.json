@@ -56,7 +56,7 @@
   "cronNeedInspiration": "需要新灵感？",
   "cronStartFromResult": "从一个具体结果开始",
   "cronTemplateSelectionHint": "选择模板后仍可修改，再进入 AI 会话确认。",
-  "cronEmptyHeroTitle": "想让 NextClaw 定期替你做什么？",
+  "cronEmptyHeroTitle": "想让 元流 定期替你做什么？",
   "cronEmptyHeroDescription": "描述目标，或者选一个模板作为起点。AI 会和你确认执行时间、范围与结果发送方式。",
   "cronNoMatchingTasks": "没有符合条件的任务",
   "cronNoMatchingTasksHint": "尝试更换关键词或状态筛选。",

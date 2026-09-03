@@ -1,6 +1,6 @@
 import { t } from "@/shared/lib/i18n";
 
-const PRODUCT = "NextClaw";
+const PRODUCT = "元流";
 
 type UiDocumentTitleLocation = Pick<Location, "host" | "hostname" | "port">;
 

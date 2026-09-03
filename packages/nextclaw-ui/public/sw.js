@@ -1,7 +1,7 @@
 /* global caches, self */
 
-const SHELL_CACHE = 'nextclaw-ui-shell-v2';
-const SHELL_ASSETS = ['/offline.html', '/manifest.webmanifest', '/logo.svg', '/pwa-192.png', '/pwa-512.png'];
+const SHELL_CACHE = 'yuanliu-ui-shell-v1';
+const SHELL_ASSETS = ['/offline.html', '/manifest.webmanifest', '/yuanliu-icon.png', '/pwa-192.png', '/pwa-512.png'];
 
 self.addEventListener('install', (event) => {
   event.waitUntil(
@@ -14,7 +14,7 @@ self.addEventListener('install', (event) => {
 self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches.keys().then(async (keys) => {
-      await Promise.all(keys.filter((key) => key.startsWith('nextclaw-ui-') && key !== SHELL_CACHE).map((key) => caches.delete(key)));
+      await Promise.all(keys.filter((key) => (key.startsWith('nextclaw-ui-') || key.startsWith('yuanliu-ui-')) && key !== SHELL_CACHE).map((key) => caches.delete(key)));
     })
   );
 });

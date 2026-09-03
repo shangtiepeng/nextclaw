@@ -14,8 +14,8 @@ type WindowControlDefinition = {
 };
 
 const windowControls: WindowControlDefinition[] = [
-  { action: "minimize", label: "Minimize", icon: Minus },
-  { action: "close", label: "Close", icon: X, variant: "danger" },
+  { action: "minimize", label: "最小化", icon: Minus },
+  { action: "close", label: "关闭", icon: X, variant: "danger" },
 ];
 
 export function DesktopWindowChrome({
@@ -25,8 +25,8 @@ export function DesktopWindowChrome({
 }) {
   const isMaximized = useDesktopWindowMaximizedState();
   const maximizeControl: WindowControlDefinition = isMaximized
-    ? { action: "toggle-maximize", label: "Restore", icon: Copy }
-    : { action: "toggle-maximize", label: "Maximize", icon: Square };
+    ? { action: "toggle-maximize", label: "还原", icon: Copy }
+    : { action: "toggle-maximize", label: "最大化", icon: Square };
 
   return (
     <header
@@ -47,8 +47,8 @@ export function DesktopWindowChrome({
       >
         {sidebarCollapsed ? (
           <img
-            src="/logo.svg"
-            alt="NextClaw"
+            src="/yuanliu-icon.png"
+            alt="元流"
             className="h-6 w-6 shrink-0 object-contain"
           />
         ) : (

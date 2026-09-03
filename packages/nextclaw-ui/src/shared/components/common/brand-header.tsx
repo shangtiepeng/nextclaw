@@ -24,7 +24,7 @@ type BrandHeaderProps = {
 export function BrandHeader({ className, density = 'sidebar', suffix }: BrandHeaderProps) {
   const { data } = useAppMeta();
   const { supported, busyAction, snapshot } = useRuntimeUpdateStore();
-  const productName = data?.name ?? 'NextClaw';
+  const productName = data?.name ?? '元流';
   const productVersion = data?.productVersion?.trim();
   const versionLabel = productVersion ? `v${productVersion}` : null;
   const releaseNotesLink = useCurrentVersionReleaseNotesLink(productVersion);
@@ -40,7 +40,7 @@ export function BrandHeader({ className, density = 'sidebar', suffix }: BrandHea
         isChromeDensity ? 'h-6 w-6 rounded-md' : 'h-6 w-6 rounded-md',
         )}
       >
-        <img src="/logo.svg" alt={productName} className="h-full w-full object-contain" />
+        <img src="/yuanliu-icon.png" alt={productName} className="h-full w-full object-contain" />
       </div>
       <div className="flex min-w-0 items-center gap-2">
         <div className="flex min-w-0 flex-1 items-baseline gap-1.5">

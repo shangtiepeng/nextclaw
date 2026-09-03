@@ -1,7 +1,7 @@
 {
-  "name": "NextClaw",
-  "short_name": "NextClaw",
-  "description": "NextClaw is your installable AI operating layer for chat, configuration, orchestration, and local runtime control.",
+  "name": "元流",
+  "short_name": "元流",
+  "description": "元流是可安装的 AI 工作台，提供对话、配置、编排与本地运行时控制。",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
@@ -18,12 +18,6 @@
       "src": "/pwa-512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "/logo.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
       "purpose": "any"
     }
   ]

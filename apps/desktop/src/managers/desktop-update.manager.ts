@@ -195,7 +195,7 @@ export class DesktopUpdateManager {
         { role: "unhide" },
         { type: "separator" },
         {
-          label: "Quit NextClaw",
+          label: "退出元流",
           accelerator: "CommandOrControl+Q",
           click: () => {
             this.options.presenceService.requestExplicitQuit();
@@ -215,16 +215,16 @@ export class DesktopUpdateManager {
   private createUpdateMenuItems = (snapshot: DesktopUpdateSnapshot | undefined): MenuItemConstructorOptions[] => {
     return [
       {
-        label: "Check for Updates",
+        label: "检查更新",
         click: () => void this.handleManualUpdateCheck()
       },
       {
-        label: "Download Update",
+        label: "下载更新",
         enabled: snapshot?.status === "update-available",
         click: () => void this.handleManualUpdateDownload()
       },
       {
-        label: "Restart to Apply Update",
+        label: "重启并应用更新",
         enabled: snapshot?.status === "downloaded",
         click: () => void this.handleApplyDownloadedUpdate()
       }
@@ -235,16 +235,16 @@ export class DesktopUpdateManager {
     try {
       const snapshot = await this.checkForUpdates();
       if (snapshot.status === "up-to-date") {
-        await this.showMessage("info", "NextClaw is up to date", "You already have the latest desktop bundle.");
+        await this.showMessage("info", "元流已是最新版本", "当前已安装最新的桌面端版本。");
         return;
       }
       if (snapshot.status === "update-available") {
         const response = await dialog.showMessageBox({
           type: "info",
-          title: "NextClaw Update Available",
-          message: `Version ${snapshot.availableVersion ?? "new"} is available.`,
-          detail: "Download the update now and install it when you're ready to restart NextClaw.",
-          buttons: ["Download Now", "Later"],
+          title: "发现元流更新",
+          message: `版本 ${snapshot.availableVersion ?? "新版"} 已可用。`,
+          detail: "现在下载，准备好重启元流时再安装。",
+          buttons: ["立即下载", "稍后"],
           defaultId: 0,
           cancelId: 1
         });
@@ -258,11 +258,11 @@ export class DesktopUpdateManager {
         return;
       }
       if ((snapshot.status === "blocked" || snapshot.status === "failed") && snapshot.errorMessage) {
-        const title = snapshot.status === "blocked" ? "Desktop update blocked" : "Desktop update check failed";
+        const title = snapshot.status === "blocked" ? "桌面端更新已阻止" : "桌面端更新检查失败";
         await this.showMessage("warning", title, snapshot.errorMessage);
       }
     } catch (error) {
-      await this.showMessage("error", "Desktop update check failed", error);
+      await this.showMessage("error", "桌面端更新检查失败", error);
     }
   };
 
@@ -273,7 +273,7 @@ export class DesktopUpdateManager {
         await this.showDownloadedUpdateDialog(snapshot);
       }
     } catch (error) {
-      await this.showMessage("error", "Desktop update download failed", error);
+      await this.showMessage("error", "桌面端更新下载失败", error);
     }
   };
 
@@ -282,7 +282,7 @@ export class DesktopUpdateManager {
       await this.ensureCoordinator().applyDownloadedUpdate();
       await this.options.restartApplication();
     } catch (error) {
-      await this.showMessage("error", "Unable to apply desktop update", error);
+      await this.showMessage("error", "无法应用桌面端更新", error);
     }
   };
 
@@ -295,7 +295,7 @@ export class DesktopUpdateManager {
       type,
       title,
       message: message instanceof Error ? message.message : String(message),
-      buttons: ["OK"]
+      buttons: ["确定"]
     });
   };
 
@@ -306,10 +306,10 @@ export class DesktopUpdateManager {
 
     const dialogOptions: MessageBoxOptions = {
       type: "info",
-      title: "NextClaw Update Ready",
-      message: `Version ${snapshot.downloadedVersion ?? "new"} has been downloaded and is ready to install.`,
-      detail: "Restart NextClaw now to apply the new bundle. If the new version fails to boot, the launcher will roll back automatically.",
-      buttons: ["Restart Now", "Later"],
+      title: "元流更新已就绪",
+      message: `版本 ${snapshot.downloadedVersion ?? "新版"} 已下载，随时可以安装。`,
+      detail: "立即重启元流即可应用新版本。若启动失败，启动器会自动回滚。",
+      buttons: ["立即重启", "稍后"],
       defaultId: 0,
       cancelId: 1
     };

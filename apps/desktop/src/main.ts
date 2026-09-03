@@ -137,7 +137,7 @@ class DesktopApplication {
 
   private startHostDiagnosticsAndAcquireLock = (): boolean => {
     crashReporter.start({
-      productName: "NextClaw Desktop",
+      productName: "元流",
       uploadToServer: false,
       globalExtra: { nextclawRunId: process.env.NEXTCLAW_DESKTOP_RUN_ID ?? "standalone" }
     });
@@ -292,10 +292,10 @@ class DesktopApplication {
     logger.error(`Failed to bootstrap runtime: ${String(error)}`);
     const result = await dialog.showMessageBox({
       type: "error",
-      title: "NextClaw Desktop Failed to Start",
-      message: "Unable to start local NextClaw runtime.",
+      title: "元流启动失败",
+      message: "无法启动本地元流运行时。",
       detail: error instanceof Error ? error.message : String(error),
-      buttons: ["Open Logs", "Quit"],
+      buttons: ["打开日志", "退出"],
       defaultId: 0,
       cancelId: 1
     });
