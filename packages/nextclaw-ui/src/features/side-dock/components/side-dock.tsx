@@ -25,6 +25,7 @@ import {
 import { useConfirmDialog } from '@/shared/hooks/use-confirm-dialog';
 import { t } from '@/shared/lib/i18n';
 import { cn } from '@/shared/lib/utils';
+import { isMacDesktopHost } from '@/platforms/desktop';
 
 type SideDockProps = {
   manager: SideDockManager;
@@ -231,7 +232,10 @@ export function SideDock({ manager }: SideDockProps) {
       <aside
         data-testid="side-dock"
         data-theme-surface="utility-rail"
-        className="z-30 flex h-full w-14 shrink-0 flex-col items-center gap-1 border-l border-border/60 bg-background/95 px-2 py-3"
+        className={cn(
+          'z-30 flex h-full w-14 shrink-0 flex-col items-center gap-1 border-l border-border/60 bg-background/95 px-2 py-3',
+          isMacDesktopHost() && 'desktop-window-drag',
+        )}
       >
         <div className="flex w-full flex-col items-center gap-1">
           {mainItems.map((item) => (

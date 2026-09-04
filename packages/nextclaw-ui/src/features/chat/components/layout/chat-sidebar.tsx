@@ -54,6 +54,7 @@ import { useViewportLayoutStore } from "@/app/stores/viewport-layout.store";
 import { SIDEBAR_RAIL_WIDTH_CLASS } from "@/app/components/layout/sidebar-rail.styles";
 import { ChatProjectAddDialog } from "@/features/chat/features/project/components/chat-project-add-dialog";
 import { useChatSidebarContextCounts } from "@/features/chat/features/session/hooks/use-chat-sidebar-context-counts";
+import { isMacDesktopHost } from "@/platforms/desktop";
 
 type ChatSidebarVariant = "desktop" | "mobile";
 
@@ -282,6 +283,7 @@ export function ChatSidebar({
       data-theme-surface="navigation"
       className={cn(
         "flex h-full min-h-0 flex-col bg-secondary transition-[width] duration-200 ease-out",
+        !isMobileVariant && isMacDesktopHost() ? "desktop-window-drag" : null,
         isMobileVariant
           ? "flex-1 overflow-hidden"
           : shouldCollapse

@@ -18,10 +18,16 @@ import { cn } from '@/shared/lib/utils';
 type BrandHeaderProps = {
   className?: string;
   density?: 'sidebar' | 'chrome';
+  reserveMacWindowControls?: boolean;
   suffix?: ReactNode;
 };
 
-export function BrandHeader({ className, density = 'sidebar', suffix }: BrandHeaderProps) {
+export function BrandHeader({
+  className,
+  density = 'sidebar',
+  reserveMacWindowControls,
+  suffix,
+}: BrandHeaderProps) {
   const { data } = useAppMeta();
   const { supported, busyAction, snapshot } = useRuntimeUpdateStore();
   const productName = data?.name ?? '元流';
@@ -29,7 +35,8 @@ export function BrandHeader({ className, density = 'sidebar', suffix }: BrandHea
   const versionLabel = productVersion ? `v${productVersion}` : null;
   const releaseNotesLink = useCurrentVersionReleaseNotesLink(productVersion);
   const resolvedSuffix = suffix ?? <RuntimeStatusEntry />;
-  const shouldReserveMacWindowControls = typeof window !== 'undefined' && window.nextclawDesktop?.platform === 'darwin';
+  const shouldReserveMacWindowControls = reserveMacWindowControls
+    ?? (typeof window !== 'undefined' && window.nextclawDesktop?.platform === 'darwin');
   const isChromeDensity = density === 'chrome';
 
   return (

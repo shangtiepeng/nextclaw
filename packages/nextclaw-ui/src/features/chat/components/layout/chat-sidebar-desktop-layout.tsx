@@ -26,7 +26,7 @@ import { useInboxUnreadCount } from "@/features/inbox";
 import { ChatSidebarSessionList } from "@/features/chat/features/session/components/chat-sidebar-session-list";
 import { ChatSidebarUtilityMenu } from "@/features/chat/components/layout/chat-sidebar-utility-menu";
 import { PanelAppMainSidebarNav } from "@/features/panel-apps";
-import { isWindowsDesktopHost } from "@/platforms/desktop";
+import { isMacDesktopHost, isWindowsDesktopHost } from "@/platforms/desktop";
 import { viewportLayoutManager } from "@/app/managers/viewport-layout.manager";
 import { useScrollRestoration } from "@/shared/hooks/use-scroll-restoration";
 import {
@@ -81,9 +81,8 @@ export function ChatSidebarDesktopHeader({
   isCollapsed: boolean;
 }) {
   const isWindowsHost = isWindowsDesktopHost();
-  const shouldReserveMacWindowControls =
-    typeof window !== "undefined" &&
-    window.nextclawDesktop?.platform === "darwin";
+  const isMacHost = isMacDesktopHost();
+  const shouldStackMacTitle = isMacHost && !isCollapsed;
 
   return (
     <div
@@ -93,13 +92,16 @@ export function ChatSidebarDesktopHeader({
           ? "justify-center px-2 py-1.5"
           : isWindowsHost
             ? "justify-end px-3 py-1.5"
+            : shouldStackMacTitle
+              ? "gap-2 px-4 pb-2 pt-9"
             : "gap-2 px-4 py-2",
-        isCollapsed && shouldReserveMacWindowControls ? "pt-8" : null,
+        isCollapsed && isMacHost ? "pt-8" : null,
       )}
     >
       {isCollapsed || isWindowsHost ? null : (
         <BrandHeader
           className="flex min-w-0 flex-1 items-center gap-2"
+          reserveMacWindowControls={!shouldStackMacTitle}
           suffix={<StatusBadge status={connectionStatus} />}
         />
       )}

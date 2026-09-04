@@ -15,6 +15,7 @@ import { createDefaultDocBrowserState } from '@/shared/components/doc-browser/ut
 describe('SideDock', () => {
   beforeEach(() => {
     window.localStorage.clear();
+    window.nextclawDesktop = undefined;
     useSideDockStore.getState().setVisible(true);
     useSideDockStore.getState().setPinnedItems([]);
     useDocBrowserStore.getState().setSnapshot(createDefaultDocBrowserState());
@@ -43,6 +44,20 @@ describe('SideDock', () => {
     fireEvent.click(appsButton as Element);
 
     expect(openItem).toHaveBeenCalledWith(builtInItems[0]);
+  });
+
+  it('makes unused macOS dock space draggable without changing its controls', () => {
+    window.nextclawDesktop = { platform: 'darwin' } as typeof window.nextclawDesktop;
+    const manager = { openItem: vi.fn() } as unknown as SideDockManager;
+    const docBrowserManager = new DocBrowserManager();
+
+    render(
+      <DocBrowserProvider manager={docBrowserManager}>
+        <SideDock manager={manager} />
+      </DocBrowserProvider>,
+    );
+
+    expect(screen.getByTestId('side-dock').className).toContain('desktop-window-drag');
   });
 
   it('places the GitHub project shortcut in the utility section', () => {
