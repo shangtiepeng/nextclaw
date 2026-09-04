@@ -2,7 +2,7 @@
   "name": "@nextclaw/channel-extension-wecom",
   "version": "0.2.43",
   "private": false,
-  "description": "NextClaw WeCom channel extension process.",
+  "description": "元流 WeCom channel extension process.",
   "type": "module",
   "exports": {
     ".": {

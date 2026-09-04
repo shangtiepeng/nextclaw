@@ -121,7 +121,7 @@ export class FeishuRegistrationService {
       qrCodeUrl: begin.qrUrl,
       expiresAt: new Date(expiresAtMs).toISOString(),
       intervalMs: begin.intervalMs,
-      note: "请使用飞书或 Lark 扫码授权，NextClaw 会自动创建机器人应用并保存连接信息。",
+      note: "请使用飞书或 Lark 扫码授权，元流会自动创建机器人应用并保存连接信息。",
     };
   };
 

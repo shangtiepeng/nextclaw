@@ -2,7 +2,7 @@
   "name": "@nextclaw/channel-extension-dingtalk",
   "version": "0.2.43",
   "private": false,
-  "description": "NextClaw DingTalk channel extension process.",
+  "description": "元流 DingTalk channel extension process.",
   "type": "module",
   "exports": {
     ".": {

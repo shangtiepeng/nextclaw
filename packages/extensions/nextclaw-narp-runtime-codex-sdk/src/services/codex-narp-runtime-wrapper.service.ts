@@ -75,7 +75,7 @@ export class CodexNarpRuntimeWrapper {
 
   start = (): void => {
     new NarpStdioRuntimeWrapper({
-      agentName: "NextClaw Codex NARP",
+      agentName: "元流 Codex NARP",
       createRuntime: (context) => this.createCodexRuntime(context),
     }).start();
   };

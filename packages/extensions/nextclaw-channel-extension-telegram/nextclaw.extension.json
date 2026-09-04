@@ -1,6 +1,6 @@
 {
   "id": "nextclaw-channel-extension-telegram",
-  "name": "NextClaw Telegram Channel Extension",
+  "name": "元流 Telegram 渠道扩展",
   "version": "0.1.0",
   "server": {
     "type": "stdio",
@@ -12,7 +12,7 @@
       {
         "id": "telegram",
         "name": "Telegram",
-        "description": "Telegram bot channel",
+        "description": "Telegram 机器人渠道",
         "configSchema": {
           "type": "object",
           "additionalProperties": true,

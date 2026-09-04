@@ -532,7 +532,7 @@
   "chatRoleMessage": "消息",
   "chatObservationEventLabel": "外部事件",
   "chatObservationEventDetailsTitle": "事件详情",
-  "chatObservationEventExtension": "Extension",
+  "chatObservationEventExtension": "扩展",
   "chatObservationEventId": "事件 ID",
   "chatObservationEventTime": "时间",
   "chatObservationEventPayloadLabel": "事件数据",

@@ -237,10 +237,10 @@ export class PanelAppBridgeManager {
       panelAppId: session.appId,
       actions: [{
         actionId: capability,
-        actionTitle: capability === 'agent:send' ? 'Send agent message' : 'Generate object',
+        actionTitle: capability === 'agent:send' ? '发送智能体消息' : '生成对象',
         actionDescription: capability === 'agent:send'
-          ? 'Send a message to a NextClaw Agent session.'
-          : 'Send context to a NextClaw Agent session and receive a structured object.',
+          ? '向元流智能体会话发送消息。'
+          : '向元流智能体会话发送上下文并接收结构化对象。',
         risk: 'write',
       }],
     });

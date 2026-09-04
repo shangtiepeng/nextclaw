@@ -22,6 +22,10 @@ function ExtensionState({ state }: { state: UiExtensionView['state'] }) {
   );
 }
 
+function displayExtensionName(extension: UiExtensionView): string {
+  return (extension.name || extension.id).replace(/nextclaw/gi, '元流');
+}
+
 function SummaryCard({ label, value }: { label: string; value: number }) {
   return (
     <div className='rounded-xl border border-border/70 bg-card px-4 py-3'>
@@ -40,12 +44,14 @@ function ExtensionCard({ extension }: { extension: UiExtensionView }) {
         </span>
         <div className='min-w-0 flex-1'>
           <div className='flex flex-wrap items-center gap-2'>
-            <h2 className='truncate font-semibold text-foreground'>{extension.name}</h2>
+            <h2 className='truncate font-semibold text-foreground'>{displayExtensionName(extension)}</h2>
             <ExtensionState state={extension.state} />
           </div>
-          <p className='mt-1 break-all text-xs text-muted-foreground'>
-            {extension.id}{extension.version ? ` · v${extension.version}` : ''}
-          </p>
+          {extension.version ? (
+            <p className='mt-1 text-xs text-muted-foreground'>
+              {t('extensionsVersion')} v{extension.version}
+            </p>
+          ) : null}
         </div>
       </div>
       <div className='mt-4 grid gap-2 sm:grid-cols-2'>

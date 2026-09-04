@@ -2,7 +2,7 @@
   "name": "@nextclaw/desktop-extension-wechat",
   "version": "0.2.2",
   "private": false,
-  "description": "NextClaw WeChat Desktop observation extension.",
+  "description": "元流 WeChat Desktop observation extension.",
   "type": "module",
   "exports": {
     ".": {

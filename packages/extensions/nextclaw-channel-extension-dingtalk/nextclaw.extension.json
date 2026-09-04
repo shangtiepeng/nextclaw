@@ -1,6 +1,6 @@
 {
   "id": "nextclaw-channel-extension-dingtalk",
-  "name": "NextClaw DingTalk Channel Extension",
+  "name": "元流钉钉渠道扩展",
   "version": "0.1.0",
   "server": {
     "type": "stdio",
@@ -11,8 +11,8 @@
     "channels": [
       {
         "id": "dingtalk",
-        "name": "DingTalk",
-        "description": "DingTalk robot channel",
+        "name": "钉钉",
+        "description": "钉钉机器人渠道",
         "configSchema": {
           "type": "object",
           "additionalProperties": true,

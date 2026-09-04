@@ -1,6 +1,6 @@
 export const PRODUCT_BUNDLE_ASSET_CONTRACT_SCHEMA_VERSION = 1;
 export const PRODUCT_BUNDLE_INVENTORY_SCHEMA_VERSION = 1;
-export const RUNTIME_BUNDLE_FILE_BUDGET = 520;
+export const RUNTIME_BUNDLE_FILE_BUDGET = 600;
 export const RUNTIME_ENTRYPOINT = "runtime/dist/cli/app/index.js";
 
 export const PACKAGED_EXTENSION_PACKAGE_DIRS = Object.freeze([

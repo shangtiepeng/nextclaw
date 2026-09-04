@@ -1,6 +1,6 @@
 {
   "id": "nextclaw-channel-extension-feishu",
-  "name": "NextClaw Feishu Channel Extension",
+  "name": "元流飞书渠道扩展",
   "version": "0.1.0",
   "server": {
     "type": "stdio",
@@ -11,18 +11,18 @@
     "channels": [
       {
         "id": "feishu",
-        "name": "Feishu/Lark",
-        "description": "Feishu/Lark QR scan-to-create bot with WebSocket messaging",
+        "name": "飞书 / Lark",
+        "description": "通过扫码创建机器人并使用 WebSocket 消息的飞书 / Lark 渠道",
         "auth": {
           "type": "request-response"
         },
         "configUiHints": {
-          "enabled": { "label": "Enabled" },
-          "defaultAccountId": { "label": "Default Account ID" },
-          "domain": { "label": "Domain" },
-          "allowFrom": { "label": "Allow From" },
-          "groupPolicy": { "label": "Group Policy", "advanced": true },
-          "requireMention": { "label": "Require Mention", "advanced": true }
+          "enabled": { "label": "启用" },
+          "defaultAccountId": { "label": "默认账号 ID" },
+          "domain": { "label": "服务区域" },
+          "allowFrom": { "label": "允许来源" },
+          "groupPolicy": { "label": "群组策略", "advanced": true },
+          "requireMention": { "label": "必须提及", "advanced": true }
         },
         "configSchema": {
           "type": "object",

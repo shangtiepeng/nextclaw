@@ -27,7 +27,7 @@ export class OpencodeNarpRuntimeWrapper {
 
   start = (): void => {
     new NarpStdioRuntimeWrapper({
-      agentName: "NextClaw OpenCode NARP",
+      agentName: "元流 OpenCode NARP",
       createRuntime: (context) => this.createOpencodeRuntime(context),
     }).start();
   };

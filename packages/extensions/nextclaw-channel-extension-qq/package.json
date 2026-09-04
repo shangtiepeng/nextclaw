@@ -2,7 +2,7 @@
   "name": "@nextclaw/channel-extension-qq",
   "version": "0.2.31",
   "private": false,
-  "description": "NextClaw QQ channel extension process.",
+  "description": "元流 QQ channel extension process.",
   "type": "module",
   "exports": {
     ".": {

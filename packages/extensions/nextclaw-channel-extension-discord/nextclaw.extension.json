@@ -1,6 +1,6 @@
 {
   "id": "nextclaw-channel-extension-discord",
-  "name": "NextClaw Discord Channel Extension",
+  "name": "元流 Discord 渠道扩展",
   "version": "0.1.0",
   "server": {
     "type": "stdio",
@@ -12,7 +12,7 @@
       {
         "id": "discord",
         "name": "Discord",
-        "description": "Discord bot channel",
+        "description": "Discord 机器人渠道",
         "configSchema": {
           "type": "object",
           "additionalProperties": true,

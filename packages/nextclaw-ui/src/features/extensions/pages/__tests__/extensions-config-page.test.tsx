@@ -6,8 +6,8 @@ vi.mock('@/features/extensions/hooks/use-extensions', () => ({
   useExtensions: () => ({
     data: {
       extensions: [{
-        id: 'world-extension',
-        name: 'World',
+        id: 'nextclaw-world-extension',
+        name: 'NextClaw World Extension',
         version: '1.2.0',
         state: 'running',
         leaseCount: 1,
@@ -23,11 +23,12 @@ vi.mock('@/features/extensions/hooks/use-extensions', () => ({
   }),
 }));
 
-it('shows the global Extension entry with runtime and capability information', () => {
+it('shows branded extension metadata with runtime and capability information', () => {
   render(<ExtensionsConfigPage />);
 
   expect(screen.getByText('Extension Management')).toBeTruthy();
-  expect(screen.getByText('World')).toBeTruthy();
+  expect(screen.getByText('元流 World Extension')).toBeTruthy();
+  expect(screen.queryByText('nextclaw-world-extension')).toBeNull();
   expect(screen.getByText('Continuous-attention capabilities')).toBeTruthy();
   expect(screen.getByText('State · Events')).toBeTruthy();
   expect(screen.getByText('World channel')).toBeTruthy();

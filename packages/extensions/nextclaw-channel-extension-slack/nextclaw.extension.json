@@ -1,6 +1,6 @@
 {
   "id": "nextclaw-channel-extension-slack",
-  "name": "NextClaw Slack Channel Extension",
+  "name": "元流 Slack 渠道扩展",
   "version": "0.1.0",
   "server": {
     "type": "stdio",
@@ -12,7 +12,7 @@
       {
         "id": "slack",
         "name": "Slack",
-        "description": "Slack Socket Mode channel",
+        "description": "Slack Socket Mode 渠道",
         "configSchema": {
           "type": "object",
           "additionalProperties": true,

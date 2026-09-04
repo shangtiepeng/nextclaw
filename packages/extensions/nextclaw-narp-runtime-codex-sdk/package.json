@@ -2,7 +2,7 @@
   "name": "@nextclaw/nextclaw-narp-runtime-codex-sdk",
   "version": "0.2.23",
   "private": false,
-  "description": "NARP stdio launcher for the NextClaw Codex SDK runtime.",
+  "description": "NARP stdio launcher for the 元流 Codex SDK runtime.",
   "type": "module",
   "bin": {
     "nextclaw-codex-narp": "dist/controllers/codex-narp.controller.js"

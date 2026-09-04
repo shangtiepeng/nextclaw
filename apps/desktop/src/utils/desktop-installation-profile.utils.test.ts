@@ -94,6 +94,6 @@ test("rejects malformed portable markers instead of silently falling back", () =
         fileExists: () => true,
         readTextFile: () => JSON.stringify({ kind: "wrong", version: 1 })
       }),
-    /Invalid NextClaw portable marker/
+    /无效的元流便携版标记文件/
   );
 });

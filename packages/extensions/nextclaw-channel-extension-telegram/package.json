@@ -2,7 +2,7 @@
   "name": "@nextclaw/channel-extension-telegram",
   "version": "0.2.43",
   "private": false,
-  "description": "NextClaw Telegram channel extension process.",
+  "description": "元流 Telegram channel extension process.",
   "type": "module",
   "exports": {
     ".": {

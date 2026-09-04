@@ -1,6 +1,6 @@
 {
   "id": "nextclaw-channel-extension-wecom",
-  "name": "NextClaw WeCom Channel Extension",
+  "name": "元流企业微信渠道扩展",
   "version": "0.1.0",
   "server": {
     "type": "stdio",
@@ -11,8 +11,8 @@
     "channels": [
       {
         "id": "wecom",
-        "name": "WeCom",
-        "description": "WeCom enterprise messaging channel",
+        "name": "企业微信",
+        "description": "企业微信消息渠道",
         "configSchema": {
           "type": "object",
           "additionalProperties": true,

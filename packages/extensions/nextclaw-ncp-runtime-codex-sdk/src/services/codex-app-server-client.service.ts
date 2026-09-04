@@ -72,7 +72,7 @@ export class CodexAppServerClient {
     await this.request("initialize", {
       clientInfo: {
         name: "nextclaw",
-        title: "NextClaw",
+        title: "元流",
         version: "0.0.0",
       },
       capabilities: { experimentalApi: true },

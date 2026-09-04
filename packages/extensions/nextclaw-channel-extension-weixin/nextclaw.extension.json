@@ -1,6 +1,6 @@
 {
   "id": "nextclaw-channel-extension-weixin",
-  "name": "NextClaw Weixin Channel Extension",
+  "name": "元流微信渠道扩展",
   "version": "0.1.0",
   "server": {
     "type": "stdio",
@@ -11,17 +11,17 @@
     "channels": [
       {
         "id": "weixin",
-        "name": "Weixin",
-        "description": "Weixin QR login + getupdates long-poll channel",
+        "name": "微信",
+        "description": "微信扫码登录与长轮询渠道",
         "auth": {
           "type": "request-response"
         },
         "configUiHints": {
-          "enabled": { "label": "Enabled" },
-          "defaultAccountId": { "label": "Default Account ID" },
-          "baseUrl": { "label": "API Base URL" },
-          "pollTimeoutMs": { "label": "Long Poll Timeout (ms)", "advanced": true },
-          "allowFrom": { "label": "Allow From" }
+          "enabled": { "label": "启用" },
+          "defaultAccountId": { "label": "默认账号 ID" },
+          "baseUrl": { "label": "API 基础地址" },
+          "pollTimeoutMs": { "label": "长轮询超时（毫秒）", "advanced": true },
+          "allowFrom": { "label": "允许来源" }
         },
         "configSchema": {
           "type": "object",

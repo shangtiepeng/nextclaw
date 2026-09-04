@@ -1,6 +1,6 @@
 {
   "id": "nextclaw-channel-extension-qq",
-  "name": "NextClaw QQ Channel Extension",
+  "name": "元流 QQ 渠道扩展",
   "version": "0.1.0",
   "server": {
     "type": "stdio",
@@ -12,7 +12,7 @@
       {
         "id": "qq",
         "name": "QQ",
-        "description": "QQ official bot channel",
+        "description": "QQ 官方机器人渠道",
         "configSchema": {
           "type": "object",
           "additionalProperties": true,

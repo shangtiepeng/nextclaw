@@ -49,7 +49,7 @@ export class OpencodeRuntimeConfigService {
           [route.providerId]: {
             npm: resolveOpencodeProviderNpm(route.apiMode),
             ...(this.resolveOpencodeApi(route.apiMode) ? { api: this.resolveOpencodeApi(route.apiMode) } : {}),
-            name: `NextClaw ${route.providerId}`,
+            name: `元流 ${route.providerId}`,
             options: {
               ...(route.apiBase ? { baseURL: route.apiBase } : {}),
               apiKey: "{env:NEXTCLAW_OPENCODE_API_KEY}",

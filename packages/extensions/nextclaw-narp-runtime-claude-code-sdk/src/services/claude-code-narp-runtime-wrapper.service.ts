@@ -25,7 +25,7 @@ export class ClaudeCodeNarpRuntimeWrapper {
 
   start = (): void => {
     new NarpStdioRuntimeWrapper({
-      agentName: "NextClaw Claude Code NARP",
+      agentName: "元流 Claude Code NARP",
       createRuntime: (context) => this.createClaudeCodeRuntime(context),
     }).start();
   };

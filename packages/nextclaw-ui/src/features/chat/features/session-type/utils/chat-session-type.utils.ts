@@ -70,7 +70,7 @@ export function buildSessionTypeOptions(
     const value = normalizeSessionType(option.value);
     deduped.set(value, {
       value,
-      label: option.label?.trim() || resolveSessionTypeLabel(value),
+      label: resolveSessionTypeLabel(value, option.label),
       icon: option.icon ?? null,
       ready: option.ready ?? true,
       reason: option.reason ?? null,

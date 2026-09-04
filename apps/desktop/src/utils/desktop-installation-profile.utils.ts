@@ -75,7 +75,7 @@ function createProfileId(kind: DesktopInstallationKind, root: string | null): st
 function assertPortableMarker(markerPath: string, readTextFile: (path: string) => string): void {
   const parsed = JSON.parse(readTextFile(markerPath)) as Record<string, unknown>;
   if (parsed.kind !== DESKTOP_PORTABLE_MARKER_KIND || parsed.version !== DESKTOP_PORTABLE_MARKER_VERSION) {
-    throw new Error(`Invalid NextClaw portable marker: ${markerPath}`);
+    throw new Error(`无效的元流便携版标记文件：${markerPath}`);
   }
 }
 

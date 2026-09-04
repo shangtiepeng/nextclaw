@@ -94,9 +94,9 @@ export class DesktopUpdateManager {
     const snapshot = this.coordinator?.getSnapshot();
     const template: MenuItemConstructorOptions[] = [
       this.createDarwinAppMenu(snapshot),
-      { role: "editMenu" },
-      { role: "viewMenu" },
-      { role: "windowMenu" },
+      this.createDarwinEditMenu(),
+      this.createDarwinViewMenu(),
+      this.createDarwinWindowMenu(),
       this.createHelpMenu(snapshot)
     ];
     Menu.setApplicationMenu(Menu.buildFromTemplate(template));
@@ -184,15 +184,15 @@ export class DesktopUpdateManager {
     return {
       label: app.name,
       submenu: [
-        { role: "about" },
+        { label: "关于元流", role: "about" },
         { type: "separator" },
         ...this.createUpdateMenuItems(snapshot),
         { type: "separator" },
-        { role: "services" },
+        { label: "服务", role: "services" },
         { type: "separator" },
-        { role: "hide" },
-        { role: "hideOthers" },
-        { role: "unhide" },
+        { label: "隐藏元流", role: "hide" },
+        { label: "隐藏其他", role: "hideOthers" },
+        { label: "显示全部", role: "unhide" },
         { type: "separator" },
         {
           label: "退出元流",
@@ -205,9 +205,47 @@ export class DesktopUpdateManager {
     };
   };
 
+  private createDarwinEditMenu = (): MenuItemConstructorOptions => ({
+    label: "编辑",
+    submenu: [
+      { label: "撤销", role: "undo" },
+      { label: "重做", role: "redo" },
+      { type: "separator" },
+      { label: "剪切", role: "cut" },
+      { label: "复制", role: "copy" },
+      { label: "粘贴", role: "paste" },
+      { label: "全选", role: "selectAll" }
+    ]
+  });
+
+  private createDarwinViewMenu = (): MenuItemConstructorOptions => ({
+    label: "视图",
+    submenu: [
+      { label: "重新加载", role: "reload" },
+      { label: "强制重新加载", role: "forceReload" },
+      { label: "切换开发者工具", role: "toggleDevTools" },
+      { type: "separator" },
+      { label: "实际大小", role: "resetZoom" },
+      { label: "放大", role: "zoomIn" },
+      { label: "缩小", role: "zoomOut" },
+      { type: "separator" },
+      { label: "切换全屏", role: "togglefullscreen" }
+    ]
+  });
+
+  private createDarwinWindowMenu = (): MenuItemConstructorOptions => ({
+    label: "窗口",
+    submenu: [
+      { label: "最小化", role: "minimize" },
+      { label: "缩放", role: "zoom" },
+      { type: "separator" },
+      { label: "置于前台", role: "front" }
+    ]
+  });
+
   private createHelpMenu = (snapshot: DesktopUpdateSnapshot | undefined): MenuItemConstructorOptions => {
     return {
-      role: "help",
+      label: "帮助",
       submenu: this.createUpdateMenuItems(snapshot)
     };
   };
