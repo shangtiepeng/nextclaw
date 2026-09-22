@@ -24,6 +24,7 @@ import { getSettingsNavSections } from "@/app/configs/app-navigation.config";
 import { viewportLayoutManager } from "@/app/managers/viewport-layout.manager";
 import { useViewportLayoutStore } from "@/app/stores/viewport-layout.store";
 import { useScrollRestoration } from "@/shared/hooks/use-scroll-restoration";
+import { isMacDesktopHost } from "@/platforms/desktop/utils/desktop-host.utils";
 import {
   SIDEBAR_RAIL_CONTROL_CLASS,
   SIDEBAR_RAIL_ICON_CLASS,
@@ -66,9 +67,18 @@ function SettingsSidebarHeader({
   isCollapsed: boolean;
   onToggle: () => void;
 }) {
+  const reserveMacWindowControls = isMacDesktopHost() && !isCollapsed;
+
   return (
     <div
-      className={cn("shrink-0", isCollapsed ? "px-0 py-1.5" : "px-2 py-2")}
+      className={cn(
+        "shrink-0",
+        isCollapsed
+          ? "px-0 py-1.5"
+          : reserveMacWindowControls
+            ? "py-2 pl-[58px] pr-2"
+            : "px-2 py-2",
+      )}
     >
       <div
         className={cn(
