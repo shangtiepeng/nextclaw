@@ -210,7 +210,7 @@ describe("ChatSidebar read state sync", () => {
       "",
     );
     expect(screen.queryByPlaceholderText("Search conversations...")).toBeNull();
-    expect(screen.getByRole("link", { name: "Scheduled Tasks" })).toBeTruthy();
+    expect(screen.queryByRole("link", { name: "Scheduled Tasks" })).toBeNull();
     expect(screen.getByRole("button", { name: "Settings menu" })).toBeTruthy();
   });
 });

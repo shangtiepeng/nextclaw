@@ -21,6 +21,13 @@ type ChatWelcomeProjectPickerProps = {
 
 const PROJECT_PICKER_MAX_HEIGHT = createPopoverAvailableHeightLimit('20rem');
 
+function resolveWelcomeProjectName(projectRoot: string | null): string | null {
+  const projectName = getSessionProjectName(projectRoot);
+  return projectName?.trim().toLowerCase() === 'workspace'
+    ? t('workspace')
+    : projectName ?? null;
+}
+
 export function ChatWelcomeProjectPicker({
   isSaving,
   projectOptions,
@@ -31,7 +38,7 @@ export function ChatWelcomeProjectPicker({
 }: ChatWelcomeProjectPickerProps) {
   const [isOpen, setIsOpen] = useState(false);
   const projectLabel =
-    getSessionProjectName(projectRoot) ?? t('chatWelcomeProjectPickerPlaceholder');
+    resolveWelcomeProjectName(projectRoot) ?? t('chatWelcomeProjectPickerPlaceholder');
 
   const selectProjectRoot = async (nextProjectRoot: string | null) => {
     setIsOpen(false);

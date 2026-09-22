@@ -9,6 +9,7 @@ import {
 import { useNcpChatProviderStateResolved } from '@/features/chat/features/ncp/hooks/use-ncp-chat-derived-state';
 import {
   buildNcpChatProviderModelOptions,
+  filterNcpChatModelOptionsToDefaultProvider,
   filterNcpChatModelOptionsBySessionType,
 } from '@/features/chat/features/ncp/utils/ncp-chat-query-derived.utils';
 import { adaptNcpSessionSummaries } from '@/features/chat/features/session/utils/ncp-session-adapter.utils';
@@ -76,10 +77,14 @@ export function useSessionConversationInputQuery(params: UseSessionConversationI
       }),
     [config, providersView, templatesView],
   );
+  const defaultProviderModelOptions = useMemo(
+    () => filterNcpChatModelOptionsToDefaultProvider(providerModelOptions),
+    [providerModelOptions],
+  );
   const modelOptions = useMemo(
     () =>
       filterNcpChatModelOptionsBySessionType({
-        modelOptions: providerModelOptions,
+        modelOptions: defaultProviderModelOptions,
         modelSelectionMode: sessionTypeState.selectedSessionTypeOption?.modelSelectionMode,
         runtimeDefaultThinkingCapability:
           sessionTypeState.selectedSessionTypeOption?.runtimeDefaultThinking ?? null,
@@ -87,7 +92,7 @@ export function useSessionConversationInputQuery(params: UseSessionConversationI
         supportedModels: sessionTypeState.selectedSessionTypeOption?.supportedModels,
       }),
     [
-      providerModelOptions,
+      defaultProviderModelOptions,
       sessionTypeState.selectedSessionTypeOption?.modelSelectionMode,
       sessionTypeState.selectedSessionTypeOption?.runtimeDefaultThinking,
       sessionTypeState.selectedSessionTypeOption?.supportedModels,
@@ -137,10 +142,12 @@ export function useSessionConversationInputQuery(params: UseSessionConversationI
   const defaultProjectRoot = normalizeSessionProjectRootValue(
     config?.agents.defaults.workspace,
   );
-
   return useMemo(() => ({
     addDiscoveredModel,
-    defaultModel: sessionTypeState.selectedSessionTypeOption?.recommendedModel ?? config?.agents.defaults.model,
+    defaultModel:
+      sessionTypeState.selectedSessionTypeOption?.recommendedModel ??
+      config?.agents.defaults.model ??
+      (modelOptions.length > 0 ? modelOptions[0].value : undefined),
     defaultProjectRoot,
     dismissDiscoveredModels,
     discoveredModelOptions,

@@ -1,6 +1,8 @@
 import { describe, expect, it } from 'vitest';
 import {
   buildNcpChatDiscoveredModelOptions,
+  filterNcpChatDiscoveredModelOptionsToDefaultProvider,
+  filterNcpChatModelOptionsToDefaultProvider,
   filterNcpChatDiscoveredModelOptionsBySessionType,
 } from '@/features/chat/features/ncp/utils/ncp-chat-query-derived.utils';
 
@@ -49,6 +51,35 @@ const catalogView = {
 };
 
 describe('provider model catalog derivation', () => {
+  it('uses 元流 models when the branded provider is configured', () => {
+    const result = filterNcpChatModelOptionsToDefaultProvider([
+      { value: 'opencode/model-a', modelLabel: 'model-a', providerLabel: 'OpenCode Zen Free Trial', thinkingCapability: null },
+      { value: 'custom-1/model-b', modelLabel: 'model-b', providerLabel: '元流', thinkingCapability: null },
+    ]);
+
+    expect(result.map((option) => option.value)).toEqual(['custom-1/model-b']);
+  });
+
+  it('falls back to all configured models when 元流 is unavailable', () => {
+    const options = [{
+      value: 'opencode/model-a',
+      modelLabel: 'model-a',
+      providerLabel: 'OpenCode Zen Free Trial',
+      thinkingCapability: null,
+    }];
+
+    expect(filterNcpChatModelOptionsToDefaultProvider(options)).toEqual(options);
+  });
+
+  it('keeps discovered model suggestions scoped to 元流 when available', () => {
+    const result = filterNcpChatDiscoveredModelOptionsToDefaultProvider([
+      { value: 'opencode/model-a', providerId: 'opencode', providerModel: 'model-a', modelLabel: 'model-a', providerLabel: 'OpenCode Zen Free Trial', thinkingCapability: null },
+      { value: 'custom-1/model-b', providerId: 'custom-1', providerModel: 'model-b', modelLabel: 'model-b', providerLabel: '元流', thinkingCapability: null },
+    ]);
+
+    expect(result.map((option) => option.value)).toEqual(['custom-1/model-b']);
+  });
+
   it('keeps remote order and returns only configured-provider models that are not already enabled', () => {
     const result = buildNcpChatDiscoveredModelOptions({
       catalogView,

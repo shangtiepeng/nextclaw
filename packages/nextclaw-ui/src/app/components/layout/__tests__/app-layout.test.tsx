@@ -79,7 +79,7 @@ describe("AppLayout", () => {
     expect(screen.getByTestId("agents-content")).toBeTruthy();
     expect(screen.queryByTestId("settings-sidebar-header")).toBeNull();
     expect(container.querySelector("main")).toBeNull();
-    expect(screen.getByTestId("side-dock")).toBeTruthy();
+    expect(screen.queryByTestId("side-dock")).toBeNull();
   });
 
   it("hides the side dock when the persisted visibility preference is off", () => {

@@ -18,6 +18,13 @@ type ChatWelcomeAgentPickerProps = {
 
 const AGENT_PICKER_MAX_HEIGHT = createSelectAvailableHeightLimit('18rem');
 
+function resolveWelcomeAgentName(agent: AgentProfileView): string {
+  if (agent.id.trim().toLowerCase() === 'main') {
+    return '元流';
+  }
+  return agent.displayName?.trim() || agent.id;
+}
+
 export function ChatWelcomeAgentPicker({
   agents,
   selectedAgent,
@@ -36,12 +43,12 @@ export function ChatWelcomeAgentPicker({
             <>
               <AgentAvatar
                 agentId={selectedAgent.id}
-                displayName={selectedAgent.displayName}
+                displayName={resolveWelcomeAgentName(selectedAgent)}
                 avatarUrl={selectedAgent.avatarUrl}
                 className="h-5 w-5 shrink-0"
               />
               <span className="max-w-28 truncate text-sm font-medium">
-                {selectedAgent.displayName?.trim() || selectedAgent.id}
+                {resolveWelcomeAgentName(selectedAgent)}
               </span>
             </>
           ) : null}
@@ -56,12 +63,12 @@ export function ChatWelcomeAgentPicker({
             <div className="flex min-w-0 items-center gap-2">
               <AgentAvatar
                 agentId={agent.id}
-                displayName={agent.displayName}
+                displayName={resolveWelcomeAgentName(agent)}
                 avatarUrl={agent.avatarUrl}
                 className="h-5 w-5 shrink-0"
               />
               <span className="truncate text-sm font-medium text-foreground">
-                {agent.displayName?.trim() || agent.id}
+                {resolveWelcomeAgentName(agent)}
               </span>
             </div>
           </SelectItem>

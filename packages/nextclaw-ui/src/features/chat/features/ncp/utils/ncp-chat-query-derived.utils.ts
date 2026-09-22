@@ -55,6 +55,36 @@ export function buildNcpChatProviderModelOptions(params: {
   });
 }
 
+const DEFAULT_CHAT_PROVIDER_LABEL = '元流';
+
+export function filterNcpChatModelOptionsToDefaultProvider(
+  modelOptions: ChatModelOption[],
+  providerLabel: string = DEFAULT_CHAT_PROVIDER_LABEL,
+): ChatModelOption[] {
+  const normalizedProviderLabel = providerLabel.trim().toLocaleLowerCase();
+  if (!normalizedProviderLabel) {
+    return modelOptions;
+  }
+  const preferredOptions = modelOptions.filter(
+    (option) => option.providerLabel.trim().toLocaleLowerCase() === normalizedProviderLabel,
+  );
+  return preferredOptions.length > 0 ? preferredOptions : modelOptions;
+}
+
+export function filterNcpChatDiscoveredModelOptionsToDefaultProvider(
+  modelOptions: DiscoveredChatModelOption[],
+  providerLabel: string = DEFAULT_CHAT_PROVIDER_LABEL,
+): DiscoveredChatModelOption[] {
+  const normalizedProviderLabel = providerLabel.trim().toLocaleLowerCase();
+  if (!normalizedProviderLabel) {
+    return modelOptions;
+  }
+  const preferredOptions = modelOptions.filter(
+    (option) => option.providerLabel.trim().toLocaleLowerCase() === normalizedProviderLabel,
+  );
+  return preferredOptions.length > 0 ? preferredOptions : modelOptions;
+}
+
 export function buildNcpChatDiscoveredModelOptions(params: {
   catalogView: ProviderModelCatalogView | null;
   config: ConfigView | null;

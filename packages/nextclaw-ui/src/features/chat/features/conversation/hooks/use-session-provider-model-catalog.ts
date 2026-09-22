@@ -7,6 +7,7 @@ import { normalizeStringList } from '@/shared/lib/provider-models';
 import type { DiscoveredChatModelOption } from '@/features/chat/types/chat-input.types';
 import {
   buildNcpChatDiscoveredModelOptions,
+  filterNcpChatDiscoveredModelOptionsToDefaultProvider,
   filterNcpChatDiscoveredModelOptionsBySessionType,
 } from '@/features/chat/features/ncp/utils/ncp-chat-query-derived.utils';
 import { providerModelCatalogNoticeManager } from '@/features/chat/managers/provider-model-catalog-notice.manager';
@@ -112,11 +113,12 @@ export function useSessionProviderModelCatalog(params: UseSessionProviderModelCa
       if (previewModelOptions.length > 0 && !previewDismissed) {
         return previewModelOptions;
       }
-      return filterNcpChatDiscoveredModelOptionsBySessionType({
+      const sessionModelOptions = filterNcpChatDiscoveredModelOptionsBySessionType({
         modelOptions: providerModelCatalogNoticeManager.filterUnseen(catalogModelOptions),
         modelSelectionMode,
         supportedModels,
       });
+      return filterNcpChatDiscoveredModelOptionsToDefaultProvider(sessionModelOptions);
     },
     [catalogModelOptions, modelSelectionMode, noticeRevision, previewDismissed, previewModelOptions, supportedModels],
   );

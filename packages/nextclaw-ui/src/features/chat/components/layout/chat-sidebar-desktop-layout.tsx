@@ -10,22 +10,15 @@ import type { useSystemStatus } from "@/features/system-status";
 import { cn } from "@/shared/lib/utils";
 import { t, type I18nLanguage } from "@/shared/lib/i18n";
 import type { UiTheme } from "@/shared/lib/theme";
-import { SidebarNavLinkItem } from "@/app/components/layout/sidebar-items";
 import { IconActionButton } from "@/shared/components/ui/actions/icon-action-button";
 import { SCROLL_BOTTOM_EDGE_FADE_CLASS } from "@/shared/components/ui/scroll-area";
 import {
-  AlarmClock,
-  Bot,
-  BrainCircuit,
-  Inbox,
   PanelLeftClose,
   PanelLeftOpen,
   FolderPlus,
 } from "lucide-react";
-import { useInboxUnreadCount } from "@/features/inbox";
 import { ChatSidebarSessionList } from "@/features/chat/features/session/components/chat-sidebar-session-list";
 import { ChatSidebarUtilityMenu } from "@/features/chat/components/layout/chat-sidebar-utility-menu";
-import { PanelAppMainSidebarNav } from "@/features/panel-apps";
 import { isMacDesktopHost, isWindowsDesktopHost } from "@/platforms/desktop";
 import { viewportLayoutManager } from "@/app/managers/viewport-layout.manager";
 import { useScrollRestoration } from "@/shared/hooks/use-scroll-restoration";
@@ -33,28 +26,8 @@ import {
   SIDEBAR_RAIL_CONTROL_CLASS,
   SIDEBAR_RAIL_ICON_CLASS,
   SIDEBAR_RAIL_PADDING_X_CLASS,
-  SIDEBAR_RAIL_STACK_CLASS,
   SIDEBAR_RAIL_SURFACE_CLASS,
 } from "@/app/components/layout/sidebar-rail.styles";
-
-const navItems = [
-  {
-    target: "/inbox",
-    label: () => t("inboxTitle"),
-    icon: Inbox,
-  },
-  {
-    target: "/cron",
-    label: () => t("chatSidebarScheduledTasks"),
-    icon: AlarmClock,
-  },
-  {
-    target: "/skills",
-    label: () => t("chatSidebarSkills"),
-    icon: BrainCircuit,
-  },
-  { target: "/agents", label: () => t("agentsPageTitle"), icon: Bot },
-];
 
 function ChatSidebarCollapseButton({ isCollapsed }: { isCollapsed: boolean }) {
   const label = isCollapsed ? t("sidebarExpand") : t("sidebarCollapse");
@@ -110,44 +83,10 @@ export function ChatSidebarDesktopHeader({
   );
 }
 
-export function ChatSidebarDesktopNav({
-  isCollapsed,
-}: {
+export function ChatSidebarDesktopNav(_props: {
   isCollapsed: boolean;
 }) {
-  const unreadCount = useInboxUnreadCount();
-  return (
-    <div className="pb-1">
-      <div className={isCollapsed ? "px-0" : "px-3"}>
-        <ul className={isCollapsed ? SIDEBAR_RAIL_STACK_CLASS : "space-y-0.5"}>
-          {navItems.map((item) => (
-            <li
-              key={item.target}
-              className={isCollapsed ? "flex justify-center" : undefined}
-            >
-              <SidebarNavLinkItem
-                to={item.target}
-                label={item.label()}
-                icon={item.icon}
-                density="compact"
-                collapsed={isCollapsed}
-                indicator={item.target === "/inbox" && unreadCount > 0}
-                trailing={
-                  item.target === "/inbox" && unreadCount > 0
-                    ? unreadCount > 99
-                      ? "99+"
-                      : unreadCount
-                    : undefined
-                }
-                className={isCollapsed ? undefined : "rounded-lg px-2.5 py-1.5"}
-              />
-            </li>
-          ))}
-        </ul>
-      </div>
-      <PanelAppMainSidebarNav isCollapsed={isCollapsed} />
-    </div>
-  );
+  return null;
 }
 
 export function ChatSidebarSessionArea({

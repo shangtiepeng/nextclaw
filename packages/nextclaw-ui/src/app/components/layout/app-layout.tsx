@@ -12,11 +12,7 @@ import { DesktopAppShell, getDesktopHostPlatform } from "@/platforms/desktop";
 import { MobileAppShell } from "@/platforms/mobile";
 import { PANEL_APPS_DOC_BROWSER_RENDERERS } from "@/features/panel-apps";
 import { MARKETPLACE_DETAIL_DOC_BROWSER_RENDERERS } from "@/features/marketplace";
-import {
-  SideDock,
-  type SideDockManager,
-  useSideDockStore,
-} from "@/features/side-dock";
+import type { SideDockManager } from "@/features/side-dock";
 import { getPresenter } from "@/app/presenters/app.presenter";
 import { CHAT_DRAFT_SESSION_PATH } from "@/features/chat";
 import { parseSessionKeyFromRoute } from "@/features/chat/features/session/utils/chat-session-route.utils";
@@ -47,8 +43,6 @@ function AppLayoutInner({
   const { language } = useI18n();
   const { isMobile } = useViewportLayout();
   const desktopHostPlatform = getDesktopHostPlatform();
-  const isSideDockVisible = useSideDockStore((state) => state.isVisible);
-  useSideDockStore((state) => state.pinnedItems);
   const docBrowserDockControls: DocBrowserDockControls = {
     getDockState: sideDockManager.getDockState,
     pinTab: sideDockManager.pinTab,
@@ -111,7 +105,6 @@ function AppLayoutInner({
       docBrowserDockControls={docBrowserDockControls}
       docBrowserRenderers={DOC_BROWSER_RENDERERS}
       docBrowserTabMenuGroups={getDocBrowserTabMenuGroups}
-      sideDock={isSideDockVisible ? <SideDock manager={sideDockManager} /> : null}
     >
       {children}
     </DesktopAppShell>
