@@ -1,6 +1,6 @@
 import { t } from "@/shared/lib/i18n";
 
-const PRODUCT = "元流";
+const PRODUCT = "上海移动西格玛";
 
 type UiDocumentTitleLocation = Pick<Location, "host" | "hostname" | "port">;
 

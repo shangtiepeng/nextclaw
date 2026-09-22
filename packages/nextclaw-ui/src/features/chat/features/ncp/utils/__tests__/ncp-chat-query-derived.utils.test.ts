@@ -51,16 +51,16 @@ const catalogView = {
 };
 
 describe('provider model catalog derivation', () => {
-  it('uses 元流 models when the branded provider is configured', () => {
+  it('uses 上海移动西格玛 models when the branded provider is configured', () => {
     const result = filterNcpChatModelOptionsToDefaultProvider([
       { value: 'opencode/model-a', modelLabel: 'model-a', providerLabel: 'OpenCode Zen Free Trial', thinkingCapability: null },
-      { value: 'custom-1/model-b', modelLabel: 'model-b', providerLabel: '元流', thinkingCapability: null },
+      { value: 'custom-1/model-b', modelLabel: 'model-b', providerLabel: '上海移动西格玛', thinkingCapability: null },
     ]);
 
     expect(result.map((option) => option.value)).toEqual(['custom-1/model-b']);
   });
 
-  it('falls back to all configured models when 元流 is unavailable', () => {
+  it('falls back to all configured models when 上海移动西格玛 is unavailable', () => {
     const options = [{
       value: 'opencode/model-a',
       modelLabel: 'model-a',
@@ -71,10 +71,10 @@ describe('provider model catalog derivation', () => {
     expect(filterNcpChatModelOptionsToDefaultProvider(options)).toEqual(options);
   });
 
-  it('keeps discovered model suggestions scoped to 元流 when available', () => {
+  it('keeps discovered model suggestions scoped to 上海移动西格玛 when available', () => {
     const result = filterNcpChatDiscoveredModelOptionsToDefaultProvider([
       { value: 'opencode/model-a', providerId: 'opencode', providerModel: 'model-a', modelLabel: 'model-a', providerLabel: 'OpenCode Zen Free Trial', thinkingCapability: null },
-      { value: 'custom-1/model-b', providerId: 'custom-1', providerModel: 'model-b', modelLabel: 'model-b', providerLabel: '元流', thinkingCapability: null },
+      { value: 'custom-1/model-b', providerId: 'custom-1', providerModel: 'model-b', modelLabel: 'model-b', providerLabel: '上海移动西格玛', thinkingCapability: null },
     ]);
 
     expect(result.map((option) => option.value)).toEqual(['custom-1/model-b']);

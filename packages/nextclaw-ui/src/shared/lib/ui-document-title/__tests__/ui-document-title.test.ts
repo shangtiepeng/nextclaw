@@ -12,7 +12,7 @@ describe("resolveUiDocumentTitle", () => {
   it("keeps the previous title shape when the browser location is unavailable", () => {
     setLanguage("en");
 
-    expect(resolveUiDocumentTitle("/chat")).toBe("元流 - Chat");
+    expect(resolveUiDocumentTitle("/chat")).toBe("上海移动西格玛 - Chat");
   });
 
   it("uses only the port for localhost instances", () => {
@@ -23,7 +23,7 @@ describe("resolveUiDocumentTitle", () => {
         "/chat",
         testLocation("localhost:5173", "localhost", "5173"),
       ),
-    ).toBe("元流 5173 - Chat");
+    ).toBe("上海移动西格玛 5173 - Chat");
   });
 
   it("uses only the port for loopback IP instances", () => {
@@ -34,13 +34,13 @@ describe("resolveUiDocumentTitle", () => {
         "/model",
         testLocation("127.0.0.1:3000", "127.0.0.1", "3000"),
       ),
-    ).toBe("元流 3000 - Model Configuration");
+    ).toBe("上海移动西格玛 3000 - Model Configuration");
   });
 
   it("uses the projects title for project routes", () => {
     setLanguage("en");
 
-    expect(resolveUiDocumentTitle("/projects")).toBe("元流 - Projects");
+    expect(resolveUiDocumentTitle("/projects")).toBe("上海移动西格玛 - Projects");
   });
 
   it("uses the full host for non-local instances", () => {
@@ -50,6 +50,6 @@ describe("resolveUiDocumentTitle", () => {
       testLocation("nextclaw.example.com:8443", "nextclaw.example.com", "8443"),
     );
 
-    expect(title).toBe("元流 nextclaw.example.com:8443 - AI Providers");
+    expect(title).toBe("上海移动西格玛 nextclaw.example.com:8443 - AI Providers");
   });
 });

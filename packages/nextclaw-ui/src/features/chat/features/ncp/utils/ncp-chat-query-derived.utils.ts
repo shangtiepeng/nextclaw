@@ -55,32 +55,40 @@ export function buildNcpChatProviderModelOptions(params: {
   });
 }
 
-const DEFAULT_CHAT_PROVIDER_LABEL = '元流';
+const DEFAULT_CHAT_PROVIDER_LABELS = ['上海移动西格玛', '元流'];
+
+function resolveDefaultProviderLabels(providerLabel?: string): string[] {
+  if (providerLabel === undefined) {
+    return DEFAULT_CHAT_PROVIDER_LABELS;
+  }
+  const normalizedProviderLabel = providerLabel.trim().toLocaleLowerCase();
+  return normalizedProviderLabel ? [normalizedProviderLabel] : [];
+}
 
 export function filterNcpChatModelOptionsToDefaultProvider(
   modelOptions: ChatModelOption[],
-  providerLabel: string = DEFAULT_CHAT_PROVIDER_LABEL,
+  providerLabel?: string,
 ): ChatModelOption[] {
-  const normalizedProviderLabel = providerLabel.trim().toLocaleLowerCase();
-  if (!normalizedProviderLabel) {
+  const normalizedProviderLabels = resolveDefaultProviderLabels(providerLabel);
+  if (normalizedProviderLabels.length === 0) {
     return modelOptions;
   }
   const preferredOptions = modelOptions.filter(
-    (option) => option.providerLabel.trim().toLocaleLowerCase() === normalizedProviderLabel,
+    (option) => normalizedProviderLabels.includes(option.providerLabel.trim().toLocaleLowerCase()),
   );
   return preferredOptions.length > 0 ? preferredOptions : modelOptions;
 }
 
 export function filterNcpChatDiscoveredModelOptionsToDefaultProvider(
   modelOptions: DiscoveredChatModelOption[],
-  providerLabel: string = DEFAULT_CHAT_PROVIDER_LABEL,
+  providerLabel?: string,
 ): DiscoveredChatModelOption[] {
-  const normalizedProviderLabel = providerLabel.trim().toLocaleLowerCase();
-  if (!normalizedProviderLabel) {
+  const normalizedProviderLabels = resolveDefaultProviderLabels(providerLabel);
+  if (normalizedProviderLabels.length === 0) {
     return modelOptions;
   }
   const preferredOptions = modelOptions.filter(
-    (option) => option.providerLabel.trim().toLocaleLowerCase() === normalizedProviderLabel,
+    (option) => normalizedProviderLabels.includes(option.providerLabel.trim().toLocaleLowerCase()),
   );
   return preferredOptions.length > 0 ? preferredOptions : modelOptions;
 }

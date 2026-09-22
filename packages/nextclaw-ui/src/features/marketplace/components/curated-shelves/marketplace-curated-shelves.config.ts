@@ -92,10 +92,10 @@ export const MARKETPLACE_SHELF_SCENE_VISUALS: MarketplaceShelfSceneVisual[] = [
   },
   {
     scene: "nextclaw-official",
-    title: { zh: "元流官方", en: "元流 Official" },
+    title: { zh: "上海移动西格玛官方", en: "上海移动西格玛 Official" },
     summary: {
-      zh: "优先查看由元流维护的原生能力。",
-      en: "Browse native capabilities maintained by 元流.",
+      zh: "优先查看由上海移动西格玛维护的原生能力。",
+      en: "Browse native capabilities maintained by 上海移动西格玛.",
     },
     icon: Sparkles,
     tone: "teal",

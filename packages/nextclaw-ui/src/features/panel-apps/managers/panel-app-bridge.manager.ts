@@ -239,8 +239,8 @@ export class PanelAppBridgeManager {
         actionId: capability,
         actionTitle: capability === 'agent:send' ? '发送智能体消息' : '生成对象',
         actionDescription: capability === 'agent:send'
-          ? '向元流智能体会话发送消息。'
-          : '向元流智能体会话发送上下文并接收结构化对象。',
+          ? '向上海移动西格玛智能体会话发送消息。'
+          : '向上海移动西格玛智能体会话发送上下文并接收结构化对象。',
         risk: 'write',
       }],
     });

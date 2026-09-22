@@ -127,7 +127,7 @@ describe("DesktopAppShell", () => {
     expect(chromeRoot?.style.getPropertyValue("--desktop-sidebar-width")).toBe(
       "56px",
     );
-    expect(screen.getByAltText("元流")).toBeTruthy();
+    expect(screen.getByAltText("上海移动西格玛")).toBeTruthy();
   });
 
   it("switches the Windows maximize button to restore while maximized", async () => {

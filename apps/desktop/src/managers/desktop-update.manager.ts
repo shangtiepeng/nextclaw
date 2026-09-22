@@ -184,18 +184,18 @@ export class DesktopUpdateManager {
     return {
       label: app.name,
       submenu: [
-        { label: "关于元流", role: "about" },
+        { label: "关于上海移动西格玛", role: "about" },
         { type: "separator" },
         ...this.createUpdateMenuItems(snapshot),
         { type: "separator" },
         { label: "服务", role: "services" },
         { type: "separator" },
-        { label: "隐藏元流", role: "hide" },
+        { label: "隐藏上海移动西格玛", role: "hide" },
         { label: "隐藏其他", role: "hideOthers" },
         { label: "显示全部", role: "unhide" },
         { type: "separator" },
         {
-          label: "退出元流",
+          label: "退出上海移动西格玛",
           accelerator: "CommandOrControl+Q",
           click: () => {
             this.options.presenceService.requestExplicitQuit();
@@ -273,15 +273,15 @@ export class DesktopUpdateManager {
     try {
       const snapshot = await this.checkForUpdates();
       if (snapshot.status === "up-to-date") {
-        await this.showMessage("info", "元流已是最新版本", "当前已安装最新的桌面端版本。");
+        await this.showMessage("info", "上海移动西格玛已是最新版本", "当前已安装最新的桌面端版本。");
         return;
       }
       if (snapshot.status === "update-available") {
         const response = await dialog.showMessageBox({
           type: "info",
-          title: "发现元流更新",
+          title: "发现上海移动西格玛更新",
           message: `版本 ${snapshot.availableVersion ?? "新版"} 已可用。`,
-          detail: "现在下载，准备好重启元流时再安装。",
+          detail: "现在下载，准备好重启上海移动西格玛时再安装。",
           buttons: ["立即下载", "稍后"],
           defaultId: 0,
           cancelId: 1
@@ -344,9 +344,9 @@ export class DesktopUpdateManager {
 
     const dialogOptions: MessageBoxOptions = {
       type: "info",
-      title: "元流更新已就绪",
+      title: "上海移动西格玛更新已就绪",
       message: `版本 ${snapshot.downloadedVersion ?? "新版"} 已下载，随时可以安装。`,
-      detail: "立即重启元流即可应用新版本。若启动失败，启动器会自动回滚。",
+      detail: "立即重启上海移动西格玛即可应用新版本。若启动失败，启动器会自动回滚。",
       buttons: ["立即重启", "稍后"],
       defaultId: 0,
       cancelId: 1

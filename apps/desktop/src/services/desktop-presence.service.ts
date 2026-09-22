@@ -107,7 +107,7 @@ export class DesktopPresenceService {
 
     const trayIcon = this.resolveTrayImage();
     this.tray = new Tray(trayIcon);
-    this.tray.setToolTip("元流");
+    this.tray.setToolTip("上海移动西格玛");
     this.tray.on("click", this.showMainWindow);
     this.refreshTrayMenu();
     this.cleanups.push(() => {
@@ -204,7 +204,7 @@ export class DesktopPresenceService {
     const snapshot = this.getSnapshot();
     const template: MenuItemConstructorOptions[] = [
       {
-        label: "打开元流",
+        label: "打开上海移动西格玛",
         click: this.showMainWindow
       },
       {
@@ -231,7 +231,7 @@ export class DesktopPresenceService {
         : []),
       { type: "separator" },
       {
-        label: "退出元流",
+        label: "退出上海移动西格玛",
         click: () => {
           this.requestExplicitQuit();
         }

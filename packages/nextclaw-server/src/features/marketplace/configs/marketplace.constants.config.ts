@@ -12,24 +12,24 @@ export const MARKETPLACE_REMOTE_MAX_PAGES = 20;
 
 export const MARKETPLACE_ZH_COPY_BY_SLUG: Record<string, { summary: string; description?: string }> = {
   weather: {
-    summary: "元流内置技能，用于天气查询工作流。",
-    description: "在元流中提供快速天气查询工作流。"
+    summary: "上海移动西格玛内置技能，用于天气查询工作流。",
+    description: "在上海移动西格玛中提供快速天气查询工作流。"
   },
   summarize: {
-    summary: "元流内置技能，用于结构化摘要。",
-    description: "在元流中提供文件与长文本的摘要工作流。"
+    summary: "上海移动西格玛内置技能，用于结构化摘要。",
+    description: "在上海移动西格玛中提供文件与长文本的摘要工作流。"
   },
   github: {
-    summary: "元流内置技能，用于 GitHub 工作流。",
-    description: "在元流中提供 Issue、PR 与仓库相关工作流指引。"
+    summary: "上海移动西格玛内置技能，用于 GitHub 工作流。",
+    description: "在上海移动西格玛中提供 Issue、PR 与仓库相关工作流指引。"
   },
   tmux: {
-    summary: "元流内置技能，用于终端/Tmux 协作工作流。",
-    description: "在元流中提供基于 Tmux 的任务执行工作流指引。"
+    summary: "上海移动西格玛内置技能，用于终端/Tmux 协作工作流。",
+    description: "在上海移动西格玛中提供基于 Tmux 的任务执行工作流指引。"
   },
   gog: {
-    summary: "元流内置技能，用于图谱导向生成工作流。",
-    description: "在元流中提供图谱与规划导向工作流指引。"
+    summary: "上海移动西格玛内置技能，用于图谱导向生成工作流。",
+    description: "在上海移动西格玛中提供图谱与规划导向工作流指引。"
   },
   pdf: {
     summary: "Anthropic 技能，用于 PDF 读取/合并/拆分/OCR 工作流。",
@@ -56,7 +56,7 @@ export const MARKETPLACE_ZH_COPY_BY_SLUG: Record<string, { summary: string; desc
     description: "使用该技能可选择 Cloudflare 产品并部署 Workers、Pages 及相关服务。"
   },
   "channel-extension-clawbay": {
-    summary: "Clawbay 官方渠道扩展，用于元流集成。",
-    description: "通过渠道扩展机制为元流提供 Clawbay 渠道能力。"
+    summary: "Clawbay 官方渠道扩展，用于上海移动西格玛集成。",
+    description: "通过渠道扩展机制为上海移动西格玛提供 Clawbay 渠道能力。"
   }
 };

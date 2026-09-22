@@ -137,7 +137,7 @@ class DesktopApplication {
 
   private startHostDiagnosticsAndAcquireLock = (): boolean => {
     crashReporter.start({
-      productName: "元流",
+      productName: "上海移动西格玛",
       uploadToServer: false,
       globalExtra: { nextclawRunId: process.env.NEXTCLAW_DESKTOP_RUN_ID ?? "standalone" }
     });
@@ -292,8 +292,8 @@ class DesktopApplication {
     logger.error(`Failed to bootstrap runtime: ${String(error)}`);
     const result = await dialog.showMessageBox({
       type: "error",
-      title: "元流启动失败",
-      message: "无法启动本地元流运行时。",
+      title: "上海移动西格玛启动失败",
+      message: "无法启动本地上海移动西格玛运行时。",
       detail: error instanceof Error ? error.message : String(error),
       buttons: ["打开日志", "退出"],
       defaultId: 0,

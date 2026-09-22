@@ -12,7 +12,7 @@ export function PanelAppStandalonePage({ appId }: { appId: string }) {
 
   useEffect(() => {
     const previousTitle = document.title;
-    document.title = `${entry?.title ?? t("panelAppsTitle")} · 元流`;
+    document.title = `${entry?.title ?? t("panelAppsTitle")} · 上海移动西格玛`;
     return () => {
       document.title = previousTitle;
     };

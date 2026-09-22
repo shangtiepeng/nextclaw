@@ -27,7 +27,7 @@ it('shows branded extension metadata with runtime and capability information', (
   render(<ExtensionsConfigPage />);
 
   expect(screen.getByText('Extension Management')).toBeTruthy();
-  expect(screen.getByText('元流 World Extension')).toBeTruthy();
+  expect(screen.getByText('上海移动西格玛 World Extension')).toBeTruthy();
   expect(screen.queryByText('nextclaw-world-extension')).toBeNull();
   expect(screen.getByText('Continuous-attention capabilities')).toBeTruthy();
   expect(screen.getByText('State · Events')).toBeTruthy();

@@ -7,7 +7,7 @@ import type { UiExtensionsView } from "@nextclaw-server/features/extensions/inde
 function buildAppMetaView(options: UiRouterOptions): AppMetaView {
   const productVersion = options.productVersion?.trim();
   return {
-    name: "元流",
+    name: "上海移动西格玛",
     productVersion: productVersion && productVersion.length > 0 ? productVersion : "0.0.0"
   };
 }

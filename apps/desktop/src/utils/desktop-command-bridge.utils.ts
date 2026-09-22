@@ -187,9 +187,9 @@ function main(): void {
   } catch (error) {
     process.stderr.write(
       [
-        "元流桌面端命令入口不可用。",
+        "上海移动西格玛桌面端命令入口不可用。",
         `reason: ${error instanceof Error ? error.message : String(error)}`,
-        "恢复方式：请先打开一次元流，或运行桌面端修复/更新流程。",
+        "恢复方式：请先打开一次上海移动西格玛，或运行桌面端修复/更新流程。",
         ""
       ].join("\n")
     );

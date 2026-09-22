@@ -2,8 +2,8 @@
   "name": "@nextclaw/desktop",
   "version": "0.0.282",
   "private": true,
-  "description": "元流桌面端，由 Electron 驱动。",
-  "author": "元流团队",
+  "description": "上海移动西格玛桌面端，由 Electron 驱动。",
+  "author": "上海移动西格玛团队",
   "homepage": "https://github.com/shangtiepeng/nextclaw",
   "main": "dist/src/main.js",
   "license": "MIT",
@@ -57,7 +57,7 @@
   },
   "build": {
     "appId": "io.nextclaw.desktop",
-    "productName": "元流",
+    "productName": "上海移动西格玛",
     "directories": {
       "output": "release",
       "buildResources": "build"
@@ -115,7 +115,7 @@
     },
     "win": {
       "icon": "build/icons/icon.ico",
-      "artifactName": "元流-安装程序-${version}-${arch}.${ext}",
+      "artifactName": "上海移动西格玛-安装程序-${version}-${arch}.${ext}",
       "target": [
         {
           "target": "nsis",
@@ -136,8 +136,8 @@
       "allowToChangeInstallationDirectory": true,
       "createDesktopShortcut": true,
       "createStartMenuShortcut": true,
-      "shortcutName": "元流",
-      "uninstallDisplayName": "元流",
+      "shortcutName": "上海移动西格玛",
+      "uninstallDisplayName": "上海移动西格玛",
       "deleteAppDataOnUninstall": false,
       "installerIcon": "build/icons/icon.ico",
       "uninstallerIcon": "build/icons/icon.ico",
@@ -167,11 +167,11 @@
     },
     "deb": {
       "packageName": "yuanliu-desktop",
-      "maintainer": "元流团队",
+      "maintainer": "上海移动西格玛团队",
       "priority": "optional",
       "packageCategory": "utility",
-      "synopsis": "元流",
-      "description": "元流桌面端，由 Electron 驱动。"
+      "synopsis": "上海移动西格玛",
+      "description": "上海移动西格玛桌面端，由 Electron 驱动。"
     },
     "publish": [
       {

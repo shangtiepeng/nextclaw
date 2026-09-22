@@ -23,7 +23,7 @@ function ExtensionState({ state }: { state: UiExtensionView['state'] }) {
 }
 
 function displayExtensionName(extension: UiExtensionView): string {
-  return (extension.name || extension.id).replace(/nextclaw/gi, '元流');
+  return (extension.name || extension.id).replace(/nextclaw/gi, '上海移动西格玛');
 }
 
 function SummaryCard({ label, value }: { label: string; value: number }) {

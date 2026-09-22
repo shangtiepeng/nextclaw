@@ -1,5 +1,18 @@
-<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect x="15" y="15" width="70" height="70" rx="20" transform="rotate(-8 50 50)" fill="#1A1512"/>
-  <path d="M35 35L50 50M65 35L50 50M50 70L50 50" stroke="white" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
-  <circle cx="50" cy="50" r="5" fill="#FBBF24"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
+  <title>上海移动西格玛</title>
+  <defs>
+    <linearGradient id="sigma-gradient" x1="9" y1="8" x2="39" y2="40" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1769D2"/>
+      <stop offset="0.52" stop-color="#1388C9"/>
+      <stop offset="1" stop-color="#20B486"/>
+    </linearGradient>
+    <linearGradient id="sigma-highlight" x1="14" y1="12" x2="35" y2="37" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8BD7FF"/>
+      <stop offset="1" stop-color="#72E0BB"/>
+    </linearGradient>
+  </defs>
+  <rect x="2" y="2" width="44" height="44" rx="13" fill="#F6FBFF" stroke="#D7E8F5" stroke-width="2"/>
+  <path d="M35 11.5H16.9c-1.4 0-2.2 1.7-1.2 2.8l9.2 9.8a3 3 0 0 1 0 4.1l-9.2 9.8c-1 1.1-.2 2.8 1.2 2.8H35" stroke="#0E4E9B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M35 11.5H16.9c-1.4 0-2.2 1.7-1.2 2.8l9.2 9.8a3 3 0 0 1 0 4.1l-9.2 9.8c-1 1.1-.2 2.8 1.2 2.8H35" stroke="url(#sigma-gradient)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M17.4 14.1h14.2M17.4 33.9h14.2" stroke="url(#sigma-highlight)" stroke-width="1.2" stroke-linecap="round" opacity=".9"/>
 </svg>

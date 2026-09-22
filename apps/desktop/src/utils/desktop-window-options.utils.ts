@@ -13,7 +13,7 @@ export function createDesktopWindowOptions(preloadPath: string): BrowserWindowCo
     minWidth: desktopWindowMinWidth,
     minHeight: desktopWindowMinHeight,
     ...createPlatformWindowChromeOptions(),
-    title: "元流",
+    title: "上海移动西格玛",
     webPreferences: {
       preload: preloadPath,
       nodeIntegration: false,

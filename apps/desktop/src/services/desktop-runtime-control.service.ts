@@ -37,7 +37,7 @@ export class DesktopRuntimeControlService {
         accepted: true,
         action: "restart-service" as const,
         lifecycle: "restarting-service" as const,
-        message: "元流服务已重启。"
+        message: "上海移动西格玛服务已重启。"
       };
     });
 
@@ -54,7 +54,7 @@ export class DesktopRuntimeControlService {
         accepted: true,
         action: "restart-app" as const,
         lifecycle: "restarting-app" as const,
-        message: "元流应用已安排重启。"
+        message: "上海移动西格玛应用已安排重启。"
       };
     });
     this.cleanups.push(removeDesktopIpcHandlers(DESKTOP_RUNTIME_RESTART_SERVICE_CHANNEL, DESKTOP_RUNTIME_RESTART_APP_CHANNEL));

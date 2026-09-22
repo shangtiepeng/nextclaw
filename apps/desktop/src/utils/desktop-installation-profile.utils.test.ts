@@ -94,6 +94,6 @@ test("rejects malformed portable markers instead of silently falling back", () =
         fileExists: () => true,
         readTextFile: () => JSON.stringify({ kind: "wrong", version: 1 })
       }),
-    /无效的元流便携版标记文件/
+    /无效的上海移动西格玛便携版标记文件/
   );
 });

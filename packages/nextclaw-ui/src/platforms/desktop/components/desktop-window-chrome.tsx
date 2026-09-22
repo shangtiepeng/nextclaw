@@ -48,7 +48,7 @@ export function DesktopWindowChrome({
         {sidebarCollapsed ? (
           <img
             src="/yuanliu-icon.png"
-            alt="元流"
+            alt="上海移动西格玛"
             className="h-6 w-6 shrink-0 object-contain"
           />
         ) : (

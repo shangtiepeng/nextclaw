@@ -20,7 +20,7 @@ const AGENT_PICKER_MAX_HEIGHT = createSelectAvailableHeightLimit('18rem');
 
 function resolveWelcomeAgentName(agent: AgentProfileView): string {
   if (agent.id.trim().toLowerCase() === 'main') {
-    return '元流';
+    return '上海移动西格玛';
   }
   return agent.displayName?.trim() || agent.id;
 }

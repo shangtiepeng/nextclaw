@@ -1,7 +1,7 @@
 {
-  "name": "元流",
-  "short_name": "元流",
-  "description": "元流是可安装的 AI 工作台，提供对话、配置、编排与本地运行时控制。",
+  "name": "上海移动西格玛",
+  "short_name": "上海移动西格玛",
+  "description": "上海移动西格玛是可安装的 AI 工作台，提供对话、配置、编排与本地运行时控制。",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",

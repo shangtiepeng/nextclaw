@@ -30,7 +30,7 @@ export function BrandHeader({
 }: BrandHeaderProps) {
   const { data } = useAppMeta();
   const { supported, busyAction, snapshot } = useRuntimeUpdateStore();
-  const productName = data?.name ?? '元流';
+  const productName = data?.name ?? '上海移动西格玛';
   const productVersion = data?.productVersion?.trim();
   const versionLabel = productVersion ? `v${productVersion}` : null;
   const releaseNotesLink = useCurrentVersionReleaseNotesLink(productVersion);

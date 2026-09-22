@@ -42,7 +42,7 @@ describe('ChatWelcome', () => {
     renderWelcome({ onSelectAgent });
 
     const trigger = screen.getByRole('combobox', { name: 'Draft agent' });
-    expect(screen.getByText('元流')).toBeTruthy();
+    expect(screen.getByText('上海移动西格玛')).toBeTruthy();
     fireEvent.keyDown(trigger, { key: 'ArrowDown' });
     fireEvent.click(screen.getByText('Engineer'));
 

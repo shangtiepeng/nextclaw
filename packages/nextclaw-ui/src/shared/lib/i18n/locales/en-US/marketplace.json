@@ -97,7 +97,7 @@
   "mcpConnectionTimeout": "Timeout (ms)",
   "mcpConnectionVerifyTls": "Verify TLS certificate",
   "mcpConnectionLocalWarning": "This MCP runs a command on this computer. Connect only to servers you trust.",
-  "mcpConnectionRemoteWarning": "元流 connects to this remote service. Confirm that its address and permissions are trusted.",
+  "mcpConnectionRemoteWarning": "上海移动西格玛 connects to this remote service. Confirm that its address and permissions are trusted.",
   "mcpConnectionTest": "Test connection",
   "mcpConnectionTesting": "Testing",
   "mcpConnectionSave": "Save connection",

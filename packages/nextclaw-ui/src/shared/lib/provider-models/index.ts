@@ -250,9 +250,11 @@ export function buildProviderModelCatalog(params: {
     const configDisplayName = providerConfig?.displayName?.trim();
     const configured = isProviderConfigured(providerConfig);
 
+    const displayName = configDisplayName || template?.displayName || providerId;
+
     return {
       name: providerId,
-      displayName: configDisplayName || template?.displayName || providerId,
+      displayName: displayName === '元流' ? '上海移动西格玛' : displayName,
       prefix,
       aliases,
       models,

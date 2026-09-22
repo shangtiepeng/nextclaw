@@ -148,7 +148,7 @@ export class DesktopHostDiagnosticsService {
     const windowsEvidence = this.collectWindowsEvidence({
       startedAt: incident.startedAt,
       observedEndedAt: incident.observedEndedAt ?? new Date().toISOString(),
-      applicationNames: ["元流.exe", "元流", "NextClaw Desktop.exe", "nextclaw desktop", "electron.exe"]
+      applicationNames: ["上海移动西格玛.exe", "上海移动西格玛", "NextClaw Desktop.exe", "nextclaw desktop", "electron.exe"]
     });
     return this.store.appendIncidentEvidence(incident.incidentId, [...crashEvidence, ...windowsEvidence]) ?? incident;
   };

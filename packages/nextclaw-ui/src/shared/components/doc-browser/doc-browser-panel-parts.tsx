@@ -91,7 +91,7 @@ export function DocBrowserFrameContent({
           src={currentUrl}
           name={createUiContentParamsWindowName(currentTab?.contentParams)}
           className="absolute inset-0 w-full h-full border-0"
-          title={currentTab?.title || '元流文档'}
+          title={currentTab?.title || '上海移动西格玛文档'}
           sandbox={iframeSandbox}
           tabIndex={onIframePointerOver ? 0 : undefined}
           onLoad={onIframeLoad}
