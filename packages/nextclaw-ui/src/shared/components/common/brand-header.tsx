@@ -44,10 +44,10 @@ export function BrandHeader({
       <div
         className={cn(
           'flex shrink-0 items-center justify-center overflow-hidden',
-        isChromeDensity ? 'h-6 w-6 rounded-md' : 'h-6 w-6 rounded-md',
+          isChromeDensity ? 'h-5 w-5' : 'h-5 w-5',
         )}
       >
-        <img src="/yuanliu-icon.png" alt={productName} className="h-full w-full object-contain" />
+        <img src="/sigma-mark.png" alt={`${productName} 西格玛标记`} className="h-4 w-4 object-contain" />
       </div>
       <div className="flex min-w-0 items-center gap-2">
         <div className="flex min-w-0 flex-1 items-baseline gap-1.5">

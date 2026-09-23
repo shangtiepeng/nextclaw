@@ -13,7 +13,7 @@ describe('ui theme defaults', () => {
   });
 
   it('uses the default theme when no preference is saved', () => {
-    expect(DEFAULT_UI_THEME).toBe('work');
+    expect(DEFAULT_UI_THEME).toBe('cool');
     expect(resolveInitialTheme()).toBe(DEFAULT_UI_THEME);
   });
 

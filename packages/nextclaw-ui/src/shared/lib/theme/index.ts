@@ -19,9 +19,10 @@ type UiThemeDefinition = {
 };
 
 const THEME_STORAGE_KEY = 'nextclaw.ui.theme';
-export const DEFAULT_UI_THEME: UiTheme = 'work';
+export const DEFAULT_UI_THEME: UiTheme = 'cool';
 
 const THEME_DEFINITIONS: readonly UiThemeDefinition[] = [
+  { value: 'cool', labelKey: 'themeCool', appearance: 'light' },
   { value: 'work', labelKey: 'themeWork', appearance: 'light' },
   { value: 'night', labelKey: 'themeNight', appearance: 'dark' },
   { value: 'charcoal', labelKey: 'themeCharcoal', appearance: 'dark' },
@@ -29,7 +30,6 @@ const THEME_DEFINITIONS: readonly UiThemeDefinition[] = [
   { value: 'natural', labelKey: 'themeNatural', appearance: 'light' },
   { value: 'minimal', labelKey: 'themeMinimal', appearance: 'light' },
   { value: 'warm', labelKey: 'themeWarm', appearance: 'light' },
-  { value: 'cool', labelKey: 'themeCool', appearance: 'light' },
   { value: 'dawn', labelKey: 'themeDawn', appearance: 'light' },
   { value: 'graphite', labelKey: 'themeGraphite', appearance: 'light' },
   { value: 'probe', labelKey: 'themeProbe', appearance: 'light' },
