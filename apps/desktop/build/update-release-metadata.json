@@ -3,10 +3,10 @@
   "releaseTag": null,
   "seedBundle": {
     "version": "0.48.2",
-    "sha256": "3e48cee767d28fdfc17187fbc39da236ae78a2188c3b1c033273f855c9137d4d",
-    "archiveBytes": 34577912,
+    "sha256": "1c5d986d17cf30b63f7d8eb7e70481cb7d25fe3a01da5d54e71af30a26d526cb",
+    "archiveBytes": 34838417,
     "fileCount": 1124,
     "directoryCount": 169,
-    "uncompressedBytes": 109633051
+    "uncompressedBytes": 109892233
   }
 }
