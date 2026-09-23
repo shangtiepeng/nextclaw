@@ -38,27 +38,27 @@ export function BrandHeader({
   const shouldReserveMacWindowControls = reserveMacWindowControls
     ?? (typeof window !== 'undefined' && window.nextclawDesktop?.platform === 'darwin');
   const isChromeDensity = density === 'chrome';
+  const isChinaMobileSigma = productName === '上海移动西格玛';
 
   return (
     <div className={cn(className ?? 'flex min-w-0 items-center gap-2', shouldReserveMacWindowControls && 'pl-[58px]')}>
-      <div
-        className={cn(
-          'flex shrink-0 items-center justify-center overflow-hidden',
-          isChromeDensity ? 'h-5 w-5' : 'h-5 w-5',
-        )}
-      >
-        <img src="/sigma-mark.png" alt={`${productName} 西格玛标记`} className="h-4 w-4 object-contain" />
-      </div>
       <div className="flex min-w-0 items-center gap-2">
-        <div className="flex min-w-0 flex-1 items-baseline gap-1.5">
-          <span
-            className={cn(
-              'shrink-0 font-semibold text-gray-800',
-              isChromeDensity ? 'text-[15px]' : 'text-[14px]',
-            )}
-          >
-            {productName}
-          </span>
+        <div className="flex min-w-0 flex-1 items-center gap-1.5">
+          {isChinaMobileSigma ? (
+            <>
+              <img src="/yuanliu-icon.png" alt="中国移动标志" className="h-5 w-5 shrink-0 object-contain" />
+              <span className={cn('shrink-0 font-semibold text-gray-800', isChromeDensity ? 'text-[15px]' : 'text-[14px]')}>
+                上海移动
+              </span>
+              <span className={cn('shrink-0 font-semibold text-gray-800', isChromeDensity ? 'text-[15px]' : 'text-[14px]')}>
+                西格玛
+              </span>
+            </>
+          ) : (
+            <span className={cn('shrink-0 font-semibold text-gray-800', isChromeDensity ? 'text-[15px]' : 'text-[14px]')}>
+              {productName}
+            </span>
+          )}
           {versionLabel ? <BrandVersionLabel versionLabel={versionLabel} density={density} releaseNotesLink={releaseNotesLink} /> : null}
         </div>
         <RuntimeUpdateInlineStatus supported={supported} busyAction={busyAction} snapshot={snapshot} />
