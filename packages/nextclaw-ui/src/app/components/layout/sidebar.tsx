@@ -67,7 +67,7 @@ function SettingsSidebarHeader({
   isCollapsed: boolean;
   onToggle: () => void;
 }) {
-  const reserveMacWindowControls = isMacDesktopHost() && !isCollapsed;
+  const needsMacTitlebarClearance = isMacDesktopHost() && !isCollapsed;
 
   return (
     <div
@@ -75,8 +75,8 @@ function SettingsSidebarHeader({
         "shrink-0",
         isCollapsed
           ? "px-0 py-1.5"
-          : reserveMacWindowControls
-            ? "py-2 pl-[58px] pr-2"
+          : needsMacTitlebarClearance
+            ? "px-2 pb-2 pt-14"
             : "px-2 py-2",
       )}
     >
